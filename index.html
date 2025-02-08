@@ -447,12 +447,18 @@ body {
         @media (max-width: 1200px) {
             .about-info {
                 flex-direction: column;
-                text-align: center;
             }
+            .about-name {
+        text-align: center; /* Keep the name aligned to the left */
+    }
 
-            .profile-container {
-                margin-bottom: 20px;
-                display: flex;
+        .about-details {
+            text-align: center; /* Center only the details */
+    }
+
+        .profile-container {
+            margin-bottom: 20px;
+            display: flex;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
@@ -497,8 +503,8 @@ body {
             <img src="profile1.jpg" alt="Profile Picture">
         </div>
         <div class="about-text">
-            <h1>Pasion, Kurt Raymund P.</h1>
-            <p>Pianist - a person who plays the piano, especially professionally.<br>Papunta pa lang ako, nagkaklase na kayo.</p>
+            <h1 class="about-name">Pasion, Kurt Raymund P.</h1>
+            <p class="about-details">Pianist - a person who plays the piano, especially professionally.<br>Papunta pa lang ako, nagkaklase na kayo.</p>
             <p><strong>Lives in: </strong>Catmon, Santa Maria, Bulacan<br>
             <strong>Birthday: </strong>March 28, 2004<br>
             <strong>Studies at: </strong>STI College Sta. Maria</p>
