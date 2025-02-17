@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Poging Pasion</title>
     <style>
-body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
+        #notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
         .blog-placeholder {
             width: 300px;
             border-radius: 10px;
@@ -24,7 +30,7 @@ body {
             font-weight: bold;
         }
         .popup {
-            display: none;
+ /*           display: none;
             position: fixed;
             top: 50%;
             left: 50%;
@@ -34,21 +40,55 @@ body {
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             width: 80%;
-            max-width: 500px;
+            max-width: 500px; */
+
+            display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vh; /* Wider for better readability */
+    height: 90vh; /* Taller to fit more content */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    overflow-y: auto; /* Enables vertical scrolling */
+    font-size: 1.5em; /* Increases text size */
+    line-height: 1.6; /* Better spacing */
         }
         .popup-overlay {
+            /*
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.5); */
+
+            display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ensure it covers the full viewport width */
+    height: 100vh; /* Ensure it covers the full viewport height */
+    background: rgba(0, 0, 0, 0.7); /* Darker background for better focus */
+    z-index: 1000;
+
+            
         }
         .close-btn {
-            cursor: pointer;
+     /*       cursor: pointer;
             color: red;
-            float: right;
+            float: right; */
+
+            position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2em; /* Bigger close button */
+    cursor: pointer;
         }
         body {
             font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
@@ -532,12 +572,18 @@ body {
             <img src="image10.jpg" alt="Album 10" class="album-image" onclick="openFullscreen('image10.jpg')">
         </div>
     </div>
+    
 
     <div class="section" id="notes">
         <h1>Notes</h1>
         <div class="blog-placeholder" onclick="openPopup()">
             <div class="blog-title">Symphony of our Love</div>
             <div class="blog-content">Serenades of love, I sing for you...</div>
+        </div>
+
+        <div class="blog-placeholder" onclick="openPopup2()">
+            <div class="blog-title">"Sofhia"</div>
+            <div class="blog-content">Soft whispers linger in the night...</div>
         </div>
         
         <div class="popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
@@ -575,6 +621,52 @@ body {
             Stories in songs we write each day,<br>
             Everlasting love in every way.</p>
         </div>
+
+        <div class="popup" id="popup2">
+            <span class="close-btn" onclick="closePopup2()">&times;</span>
+            <h2>"Sofhia"</h2>
+            <p>Soft whispers linger in the night,  <br>
+            Our love forever shining bright.  <br>
+            Fate has bound our hearts as one,  <br>
+            Holding on until the days are done.  <br>
+            In every beat, you’ll always stay,  <br>
+            A love that time can’t wash away.  </p>
+
+            <p>Stars above may lose their glow,  <br>
+            Only you will ever know  <br>
+            Feelings deep, a flame so true,  <br>
+            Holding fast to what we knew.  <br>
+            In my soul, your light will gleam,  <br>
+            Always living in my dream.  </p>
+
+            <p>So no matter where we roam,  <br>
+            Our love will always lead us home.  <br>
+            Falling stars may light the sky,  <br>
+            Holding hands as years go by.  <br>
+            In this life or in the next,  <br>
+            Always you, my heart’s reflex.  </p>
+
+            <p>Seasons change, but love will stay,  <br>
+            Over mountains, far away.  <br>
+            Forever yours, my heart will sing,  <br>
+            Holding tight through everything.  <br>
+            In your eyes, I find my peace,  <br>
+            Always bound, our love’s release.</p>  
+
+            <p>Songs of us will never fade,  <br>
+            Oceans deep or skies displayed.  <br>
+            For in your arms, I’ve found my place,  <br>
+            Holding close in sweet embrace.  <br>
+            In every tear, in every smile,  <br>
+            Always loving, mile by mile.  </p>
+
+            <p>Silent vows we once exchanged,  <br>
+            Over time, they’re never changed.  <br>
+            Fate has written we belong,  <br>
+            Holding you, where love is strong.  <br>
+            In every breath, in every way,  <br>
+            Always, I will love you, stay.</p>  
+        </div>
     
         <script>
             function openPopup() {
@@ -585,6 +677,14 @@ body {
                 document.getElementById('popup').style.display = 'none';
                 document.getElementById('popup-overlay').style.display = 'none';
             }
+            function openPopup2() {
+            document.getElementById('popup2').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+        function closePopup2() {
+            document.getElementById('popup2').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
         </script>
     </div>
 
