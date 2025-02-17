@@ -76,6 +76,11 @@
             <div class="blog-title">"Sofhia"</div>
             <div class="blog-content">Soft whispers linger in the night...</div>
         </div>
+
+        <div class="blog-placeholder" onclick="openPopup3()">
+            <div class="blog-title">Panalangin</div>
+            <div class="blog-content">Ikaw ang laman ng bawat panalangin...</div>
+        </div>
         
         <div class="popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
         <div class="popup" id="popup">
@@ -158,6 +163,41 @@
             In every breath, in every way,  <br>
             Always, I will love you, stay.</p>  
         </div>
+
+        <div class="popup" id="popup3">
+            <span class="close-btn" onclick="closePopup3()">&times;</span>
+            <h2>Panalangin</h2>
+            <p>Ikaw ang laman ng bawat panalangin <br>
+                Panalangin na makamit ang mithiin<br>
+                Mithiin na ikaw ay makapiling<br>
+                Dahil 'yan ang sigaw ng aking damdamin</p>
+                
+                <p> Ang aking unang-unang kahilingan<br>
+                Tulungan ka sa iyong katungkulan<br>
+                Ilayo ka sa may masamang kalooban<br>
+                Iligtas ka sa tiyak na kapahamakan</p>
+                
+                <p>   Pasukan ka ng magandang kalooban<br>
+                Linisin ang iyong kaisipan<br>
+                Palawakin ang unawa sa katuwiran<br>
+                Upang labanan ang matinding kasamaan</p>
+                
+                <p> Ang aking ikalawang kahilingan<br>
+                Mabuksan ang iyong kalooban<br>
+                Upang ako'y iyong mapagbigyan<br>
+                Sana ika'y aking makamtan</p>
+                
+                <p>Pag-ibig mo sana'y masilayan<br>
+                Ako sana'y iyong sinagan<br>
+                Mithiin ko sana'y aking makamtan<br>
+                Dahil ang pagmamahal ko'y hindi mapaparam</p>
+                
+                <p> Ito ang aking hiling sa Panginoon<br>
+                Sana'y magkaroon ng katuparan<br>
+                Maging ang iyong mga kahilingan<br>
+                Ipagkaloob nawa ayon sa Kaniyang kalooban
+            </p>
+        </div>
     
         <script>
             function openPopup() {
@@ -174,6 +214,15 @@
         }
         function closePopup2() {
             document.getElementById('popup2').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+
+        function openPopup3() {
+            document.getElementById('popup3').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+        function closePopup3() {
+            document.getElementById('popup3').style.display = 'none';
             document.getElementById('popup-overlay').style.display = 'none';
         }
         </script>
