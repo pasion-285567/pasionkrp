@@ -357,9 +357,9 @@
                 height: 200px;
             }
 
-     /*       .album-container {
+            .album-container {
                 grid-template-columns: 1fr;
-            } */
+            }
 
             .logo {
                 font-size: 20px;
