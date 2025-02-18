@@ -1,8 +1,15 @@
 // Map the note contents from individual files
 const noteContents = {
+    'mahalmoakopanginoon' : mahalmoakopanginoonContent,
+    'mahalkitapanginoon' : mahalkitapanginoonContent,
     'symphony': symphonyContent,
     'sofhia': sofhiaContent,
-    'panalangin': panalanginContent
+    'panalangin': panalanginContent,
+    'parasataong' :parasataongContent,
+    'hinditayopwede': hinditayopwedeContent,
+    'Imalwayshere' : imalwayshereContent,
+    'sangalan' : sangalanContent,
+    'illwait' : illwaitContent
 };
 
 function openPopup(noteId) {
