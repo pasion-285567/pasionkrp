@@ -4,32 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Kurt Raymund Pasion</title>
-    <link rel="stylesheet" href="dark-mode_styles.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-480p.css">
+    <link rel="stylesheet" href="styles-768p.css">
+    <link rel="stylesheet" href="styles-1024p.css">
+    <link rel="stylesheet" href="dark-mode_styles.css">
 </head>
 
-<body class="katawan" id="katawan">
     <div class="navbar" id="navbar">
-        <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <span class="logo" id="navbarLogo">Kurt Raymund Pasion</span>
         <div class="nav-links" id="navLinks">
-            <a href="index.html" class="nav-button">Home</a>
-            <button class="nav-button" onclick="scrollToSection('about')">About Me</button>
-            <button class="nav-button" onclick="scrollToSection('albums')">Albums</button>
-            <button class="nav-button" onclick="scrollToSection('notes')">Notes</button>
+            <a href="index.html" class="nav-button">
+                <img src="icons/home.png" alt="Home" class="mobile-image">
+                <span>Home</span>
+            </a>
+            <button class="nav-button" onclick="scrollToSection('about')">
+                <img src="icons/about.png" alt="About" class="mobile-image">
+                <span>About</span>
+            </button>
+            <button class="nav-button" onclick="scrollToSection('albums')">
+                <img src="icons/albums.png" alt="Albums" class="mobile-image">
+                <span>Albums</span>
+            </button>
+            <button class="nav-button" onclick="scrollToSection('notes')">
+                <img src="icons/notes.png" alt="Notes" class="mobile-image">
+                <span>Notes</span>
+            </button>
             <label class="switch">
                 <input type="checkbox" id="darkModeToggle">
                 <span class="slider"></span>
             </label>
-            <span id="statusText">OFF</span>
         </div>
     </div>
 
-    <div class="sidebar" id="sidebar">
-        <a href="#">📸 My Album</a>
-        <a href="#">✉️ Send Me a Message</a>
-    </div>
-    
     <div class="hero" id="hero">
         <div class="hero-text" id="heroText">Hi! I'm Kurt Raymund Pasion</div>
     </div>
@@ -54,7 +61,18 @@
     </div>
 
     <div class="section" id="albums">
-        <h1> </h1>
+        <h1 class style="padding: 20px">Personal Album</h1>
+        <div class="album-container">
+    
+            <img src="Profiles/image1.jpg" alt="Album 1" class="album-image" onclick="openFullscreen('Profiles/image1.jpg')">
+            <img src="Profiles/image2.jpg" alt="Album 2" class="album-image" onclick="openFullscreen('Profiles/image2.jpg')">
+            <img src="Profiles/image3.jpg" alt="Album 3" class="album-image" onclick="openFullscreen('Profiles/image3.jpg')">
+            <img src="Profiles/image4.jpg" alt="Album 4" class="album-image" onclick="openFullscreen('Profiles/image4.jpg')">
+            <img src="Profiles/image5.jpg" alt="Album 5" class="album-image" onclick="openFullscreen('Profiles/image5.jpg')">
+            <img src="Profiles/image6.jpg" alt="Album 6" class="album-image" onclick="openFullscreen('Profiles/image6.jpg')">
+            <img src="Profiles/image7.jpg" alt="Album 7" class="album-image" onclick="openFullscreen('Profiles/image7.jpg')">
+            <img src="Profiles/image8.jpg" alt="Album 8" class="album-image" onclick="openFullscreen('Profiles/image8.jpg')">
+        </div>
         <h1 class style="padding: 20px">Albums</h1>
         <div class="album-container">
 
@@ -72,22 +90,7 @@
             <img src="Albums/image12.jpg" alt="Album 12" class="album-image" onclick="openFullscreen('Albums/image12.jpg')">
         </div>
     </div>
-    <h1 class style="padding: 20px">Personal Album</h1>
-    <div class="album-container">
 
-        <img src="Profiles/image1.jpg" alt="Album 1" class="album-image" onclick="openFullscreen('Profiles/image1.jpg')">
-        <img src="Profiles/image2.jpg" alt="Album 2" class="album-image" onclick="openFullscreen('Profiles/image2.jpg')">
-        <img src="Profiles/image3.jpg" alt="Album 3" class="album-image" onclick="openFullscreen('Profiles/image3.jpg')">
-        <img src="Profiles/image4.jpg" alt="Album 4" class="album-image" onclick="openFullscreen('Profiles/image4.jpg')">
-        <img src="Profiles/image5.jpg" alt="Album 5" class="album-image" onclick="openFullscreen('Profiles/image5.jpg')">
-        <img src="Profiles/image6.jpg" alt="Album 6" class="album-image" onclick="openFullscreen('Profiles/image6.jpg')">
-        <img src="Profiles/image7.jpg" alt="Album 7" class="album-image" onclick="openFullscreen('Profiles/image7.jpg')">
-        <img src="Profiles/image8.jpg" alt="Album 8" class="album-image" onclick="openFullscreen('Profiles/image8.jpg')">
-        <img src="Profiles/image9.jpg" alt="Album 9" class="album-image" onclick="openFullscreen('Profiles/image9.jpg')">
-        <img src="Profiles/image10.jpg" alt="Album 10" class="album-image" onclick="openFullscreen('Profiles/image10.jpg')">
-        <img src="Profiles/image11.jpg" alt="Album 11" class="album-image" onclick="openFullscreen('Profiles/image11.jpg')">
-        <img src="Profiles/image12.jpg" alt="Album 12" class="album-image" onclick="openFullscreen('Profiles/image12.jpg')">
-    </div>
 </div>
     <h1> </h1>
     <h1 style="padding: 20px">Notes</h1>
