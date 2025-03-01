@@ -1,0 +1,69 @@
+@media (max-width: 660px) {
+    .hero-text {
+        font-size: 36px;
+    }
+
+    .profile-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .album-container {
+        grid-template-columns: 1fr;
+    }
+
+    .album-image {
+        width: 254px;
+        height: 190px; 
+    }
+    
+    .navbar {
+        padding: 10px 0px;
+    }
+    
+    .logo {
+        display: flex;
+        grid-column: 2!important;/* Place logo in the second column */
+        text-align: center; /* Center align the logo */
+        margin: 0 auto;
+        margin-left: auto!important;
+        margin-right: auto!important;
+        align-items: center !important;
+        margin-bottom: 8px
+    }
+
+    .nav-links {
+        grid-column: 1 / 4;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        z-index: 999;
+        gap: auto;
+        margin-right: auto;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-button {
+        background-color: transparent;
+        padding: 5px;
+        padding: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .nav-button img {
+        display: block; /* Show images in mobile */
+        max-width: 30px;
+        border: none;
+    }
+
+    .nav-button span {
+        display: none; /*hide text in mobile*/
+        border: none;
+    }
+}
