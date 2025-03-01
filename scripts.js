@@ -2,13 +2,13 @@
 const noteContents = {
     'mahalmoakopanginoon' : mahalmoakopanginoonContent,
     'mahalkitapanginoon' : mahalkitapanginoonContent,
-    'symphony': symphonyContent,
+/*    'symphony': symphonyContent,
     'sofhia': sofhiaContent,
     'panalangin': panalanginContent,
     'parasataong' :parasataongContent,
-    'hinditayopwede': hinditayopwedeContent,
+    'hinditayopwede': hinditayopwedeContent, */
     'Imalwayshere' : imalwayshereContent,
-    'sangalan' : sangalanContent,
+   // 'sangalan' : sangalanContent,
     'illwait' : illwaitContent
 };
 
@@ -31,9 +31,6 @@ function closePopup() {
     document.getElementById('popup-overlay').style.display = 'none';
 }
 // For index stuffs
-function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("active");
-}
 
 function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
@@ -72,3 +69,14 @@ darkModeToggle.addEventListener('change', () => {
     document.body.classList.toggle('dark-mode', darkModeToggle.checked);
     console.log('Dark mode:', darkModeToggle.checked); // Check if the event fires
 });
+
+function updateSize() {
+    let width = window.innerWidth - 10; 
+    let height = Math.round((width / 16) * 9); // Maintain 16:9 aspect ratio
+
+    document.body.setAttribute("data-width", width);
+    document.body.setAttribute("data-height", height);
+}
+
+window.addEventListener("resize", updateSize);
+updateSize(); // Run on load

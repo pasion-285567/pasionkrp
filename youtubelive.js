@@ -21,8 +21,9 @@ async function fetchLiveStream() {
 
 function embedVideo(videoId) {
     const embedHtml = `
-        <iframe class="yt-live"
-            src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+       <!-- <iframe class="yt-live"
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1" -->
+         <iframe class="yt-live" src="https://www.youtube.com/embed/8-cjb9kbthE"
             frameborder="0" allowfullscreen>
         </iframe>
     `;
