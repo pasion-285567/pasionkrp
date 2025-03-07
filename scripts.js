@@ -60,15 +60,28 @@ function closeFullscreen() {
 }
 
 
-// Dark Mode Toggle
-
-
 const darkModeToggle = document.getElementById('darkModeToggle');
 
+// Check localStorage for saved preference
+let storedDarkMode = localStorage.getItem('darkMode');
+
+// Check system dark mode setting
+const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Determine initial state
+const isDarkMode = storedDarkMode !== null ? storedDarkMode === 'true' : prefersDarkMode;
+darkModeToggle.checked = isDarkMode;
+document.body.classList.toggle('dark-mode', isDarkMode);
+
+// Listen for toggle changes
 darkModeToggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode', darkModeToggle.checked);
-    console.log('Dark mode:', darkModeToggle.checked); // Check if the event fires
+    const isChecked = darkModeToggle.checked;
+    document.body.classList.toggle('dark-mode', isChecked);
+
+    // Save state to localStorage
+    localStorage.setItem('darkMode', isChecked);
 });
+
 
 function updateSize() {
     let width = window.innerWidth - 10;
