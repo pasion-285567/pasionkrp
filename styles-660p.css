@@ -3,31 +3,28 @@
         font-size: 36px;
     }
 
-    .profile-container {
-        width: 200px;
-        height: 200px;
-    }
-
     .album-container {
         grid-template-columns: 1fr;
     }
 
     .album-image {
         width: 254px;
-        height: 190px; 
+        height: 190px;
     }
-    
+
     .navbar {
         padding: 10px 0px;
     }
-    
+
     .logo {
         display: flex;
-        grid-column: 2!important;/* Place logo in the second column */
-        text-align: center; /* Center align the logo */
+        grid-column: 2 !important;
+        /* Place logo in the second column */
+        text-align: center;
+        /* Center align the logo */
         margin: 0 auto;
-        margin-left: auto!important;
-        margin-right: auto!important;
+        margin-left: auto !important;
+        margin-right: auto !important;
         align-items: center !important;
         margin-bottom: 8px
     }
@@ -57,13 +54,39 @@
     }
 
     .nav-button img {
-        display: block; /* Show images in mobile */
+        display: block;
+        /* Show images in mobile */
         max-width: 30px;
         border: none;
     }
 
     .nav-button span {
-        display: none; /*hide text in mobile*/
+        display: none;
+        /*hide text in mobile*/
         border: none;
+    }
+
+    .about-info {
+        flex-direction: column;
+    }
+
+    .about-name {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .about-details {
+        text-align: center;
+    }
+
+    .profile-container {
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-text {
+        text-align: left;
+        margin: auto;
     }
 }

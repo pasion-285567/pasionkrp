@@ -1,5 +1,5 @@
-const API_KEY = 'AIzaSyBVBowhuNQgc7DbdCnuAiYC_a7D0LpyCD8'; // Palitan ng iyong YouTube API key
-const CHANNEL_ID = 'UCHZ-pxYUfMbVg8gCAIPCneA'; // Palitan ng iyong YouTube Channel ID
+const API_KEY = 'AIzaSyBVBowhuNQgc7DbdCnuAiYC_a7D0LpyCD8';
+const CHANNEL_ID = 'UCHZ-pxYUfMbVg8gCAIPCneA';
 
 async function fetchLiveStream() {
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&type=video&eventType=live&key=${API_KEY}`;
@@ -21,8 +21,8 @@ async function fetchLiveStream() {
 
 function embedVideo(videoId) {
     const embedHtml = `
-       <!-- <iframe class="yt-live"
-            src="https://www.youtube.com/embed/${videoId}?autoplay=1" -->
+       <iframe class="yt-live"
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1"
          <iframe class="yt-live" src="https://www.youtube.com/embed/8-cjb9kbthE"
             frameborder="0" allowfullscreen>
         </iframe>
@@ -30,5 +30,5 @@ function embedVideo(videoId) {
     document.getElementById('video-container').innerHTML = embedHtml;
 }
 
-// Tawagin ang function para hanapin ang live stream
+
 fetchLiveStream();

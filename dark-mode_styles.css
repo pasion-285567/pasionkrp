@@ -1,86 +1,31 @@
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-            margin: auto;
-        }
-        
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color:	#1877F2;
-            transition: 0.4s;
-            border-radius: 34px;
-        }
-        
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color:white;
-            transition: 0.4s;
-            border-radius: 50%;
-            border: #333;
-        }
-        
-        input:checked + .slider {
-            background-color: yellow;
-            transition: 0.4s;
-        }
-        
-        input:checked + .slider:before {
-            transform: translateX(26px);
-            transition: 0.4s;
-            background-color: #333;
-        }
-        
-/* Styles when toggle is ON */
-
-
-    /* Dark mode styles */
 body.dark-mode {
     --body-bg-color: #333;
-    --dark-main-color: yellow;
-            background-color: var(--body-bg-color);
+    --dark-main-color: white;
+    background-color: var(--body-bg-color);
     color: white;
     transition: background-color 0.3s;
-
 }
 
-.dark-mode .nav-button span{
-    color: white;
+.dark-mode .nav-button span {
+    color: yellow !important;
     transition: 0.5s;
 }
 
 .dark-mode .navbar.scrolled {
     background-color: #333;
     color: white;
+    trabsition: 0.5s ease
 }
 
 .dark-mode .navbar.scrolled .nav-button {
     background-color: #333;
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-color: white;
 }
 
-.dark-mode .navbar.scrolled .nav-button {
-    color: white;
-    border-color: white;
+.dark-mode .about-name {
+    color: yellow;
 }
 
 .dark-mode .about-info,
@@ -96,6 +41,7 @@ body.dark-mode {
     color: white;
     transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .dark-mode .album-image,
 .dark-mode .profile-container {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -118,12 +64,12 @@ body.dark-mode {
 }
 
 .dark-mode .navbar.scrolled .menu-icon {
-    color: white
+    color: yellow;
 }
 
 .dark-mode .hero {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, var(--body-bg-color) 100%), 
-               url('Profiles/profile.jpg') no-repeat center center/cover;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, var(--body-bg-color) 100%),
+        url('Profiles/profile.jpg') no-repeat center center/cover;
     transition: all 0.5s ease;
 }
 
@@ -134,8 +80,7 @@ body.dark-mode {
 }
 
 .dark-mode .nav-button img {
-        filter: invert(83%) sepia(100%) saturate(500%) hue-rotate(0deg) brightness(100%) contrast(100%);
-    
+    filter: invert(83%) sepia(100%) saturate(500%) hue-rotate(0deg) brightness(100%) contrast(100%);
     transition: 0.5s;
 }
 
@@ -145,6 +90,5 @@ body.dark-mode {
 }
 
 .dark-mode .socmed {
-    color: var(--dark-main-color);
-    
+    color: yellow;
 }
