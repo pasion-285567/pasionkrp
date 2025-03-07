@@ -14,7 +14,7 @@ body.dark-mode {
 .dark-mode .navbar.scrolled {
     background-color: #333;
     color: white;
-    trabsition: 0.5s ease
+    transition: 0.5s ease
 }
 
 .dark-mode .navbar.scrolled .nav-button {

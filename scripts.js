@@ -1,35 +1,3 @@
-// Map the note contents from individual files
-const noteContents = {
-    'mahalmoakopanginoon': mahalmoakopanginoonContent,
-    'mahalkitapanginoon': mahalkitapanginoonContent,
-    'symphony': symphonyContent,
-    'sofhia': sofhiaContent,
-    'panalangin': panalanginContent,
-    'parasataong': parasataongContent,
-    'hinditayopwede': hinditayopwedeContent,
-    'Imalwayshere': imalwayshereContent,
-    'sangalan': sangalanContent,
-    'illwait': illwaitContent
-};
-
-function openPopup(noteId) {
-    const content = noteContents[noteId];
-
-    document.getElementById('popup-container').innerHTML = `
-        <div class="popup" id="popup">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            ${content}
-        </div>
-    `;
-
-    document.getElementById('popup').style.display = 'block';
-    document.getElementById('popup-overlay').style.display = 'block';
-}
-
-function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-    document.getElementById('popup-overlay').style.display = 'none';
-}
 // For index stuffs
 
 function scrollToSection(id) {
@@ -58,38 +26,3 @@ function openFullscreen(imageSrc) {
 function closeFullscreen() {
     document.getElementById("fullscreenModal").style.display = 'none';
 }
-
-
-const darkModeToggle = document.getElementById('darkModeToggle');
-
-// Check localStorage for saved preference
-let storedDarkMode = localStorage.getItem('darkMode');
-
-// Check system dark mode setting
-const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-// Determine initial state
-const isDarkMode = storedDarkMode !== null ? storedDarkMode === 'true' : prefersDarkMode;
-darkModeToggle.checked = isDarkMode;
-document.body.classList.toggle('dark-mode', isDarkMode);
-
-// Listen for toggle changes
-darkModeToggle.addEventListener('change', () => {
-    const isChecked = darkModeToggle.checked;
-    document.body.classList.toggle('dark-mode', isChecked);
-
-    // Save state to localStorage
-    localStorage.setItem('darkMode', isChecked);
-});
-
-
-function updateSize() {
-    let width = window.innerWidth - 10;
-    let height = Math.round((width / 16) * 9); // Maintain 16:9 aspect ratio
-
-    document.body.setAttribute("data-width", width);
-    document.body.setAttribute("data-height", height);
-}
-
-window.addEventListener("resize", updateSize);
-updateSize(); // Run on load
