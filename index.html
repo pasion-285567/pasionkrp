@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="dark-mode_styles.css">
     <link rel="stylesheet" href="dark-mode-switch.css">
     <link rel="stylesheet" href="yt-live.css">
+    <link rel="stylesheet" href="album-stack.css">
 </head>
 
 <div class="navbar" id="navbar">
@@ -97,7 +98,7 @@
             onclick="openFullscreen('Profiles/image8.jpg')">
     </div>
     <h1 class style="padding: 20px">Albums</h1>
-    <div class="album-container">
+    <!--   <div class="album-container">
 
         <img src="Albums/image1.jpg" alt="Album 1" class="album-image" onclick="openFullscreen('Albums/image1.jpg')">
         <img src="Albums/image2.jpg" alt="Album 2" class="album-image" onclick="openFullscreen('Albums/image2.jpg')">
@@ -112,14 +113,80 @@
         <img src="Albums/image11.jpg" alt="Album 11" class="album-image" onclick="openFullscreen('Albums/image11.jpg')">
         <img src="Albums/image12.jpg" alt="Album 12" class="album-image" onclick="openFullscreen('Albums/image12.jpg')">
     </div>
-</div>
+    
+</div>-->
 
-<div class="section" id="live">
-    <h1 style="padding: 20px;">Live Streaming</h1>
-    <div class="youtube-live" id="video-container">
-        <p style="padding: 20px;">Loading live video...</p>
+    <!-- Album Stack Structure -->
+    <div class="albums-stack">
+        <div class="album" data-album-id="album1">
+            <div class="photo-stack">
+                <div class="stack-photo photo-3" style="background-image: url('Albums/Album1/image3.jpg')"></div>
+                <div class="stack-photo photo-2" style="background-image: url('Albums/Album1/image2.jpg')"></div>
+                <div class="stack-photo photo-1" style="background-image: url('Albums/Album1/image1.jpg')"></div>
+            </div>
+            <div class="album-info">
+                <div class="album-title">Best Friends</div>
+                <div class="album-count">7 photos</div>
+            </div>
+        </div>
+
+        <div class="album" data-album-id="album2">
+            <div class="photo-stack">
+                <div class="stack-photo photo-3" style="background-image: url('Albums/Album2/image3.jpg')"></div>
+                <div class="stack-photo photo-2" style="background-image: url('Albums/Album2/image2.jpg')"></div>
+                <div class="stack-photo photo-1" style="background-image: url('Albums/Album2/image1.jpg')"></div>
+            </div>
+            <div class="album-info">
+                <div class="album-title">Lokal ng Sta. Maria</div>
+                <div class="album-count">10 photos</div>
+            </div>
+        </div>
+
+        <div class="album" data-album-id="album3">
+            <div class="photo-stack">
+                <div class="stack-photo photo-3" style="background-image: url('Albums/Album3/image3.jpg')"></div>
+                <div class="stack-photo photo-2" style="background-image: url('Albums/Album3/image2.jpg')"></div>
+                <div class="stack-photo photo-1" style="background-image: url('Albums/Album3/image1.jpg')"></div>
+            </div>
+            <div class="album-info">
+                <div class="album-title">Lokal ng Catmon</div>
+                <div class="album-count">9 photos</div>
+            </div>
+        </div>
+
+        <div class="album" data-album-id="album4">
+            <div class="photo-stack">
+                <div class="stack-photo photo-3" style="background-image: url('Albums/Album4/image3.jpg')"></div>
+                <div class="stack-photo photo-2" style="background-image: url('Albums/Album4/image2.jpg')"></div>
+                <div class="stack-photo photo-1" style="background-image: url('Albums/Album4/image1.jpg')"></div>
+            </div>
+            <div class="album-info">
+                <div class="album-title">Brianna & Paula</div>
+                <div class="album-count">9 photos</div>
+            </div>
+        </div>
+
+        <!-- Add more albums as needed -->
     </div>
-</div>
+
+    <!-- Album Modal -->
+    <div id="albumModal" class="album-modal">
+        <div class="album-modal-content">
+            <span class="album-close-button" onclick="closeAlbumModal()">&times;</span>
+            <h2 id="albumModalTitle">Album Title</h2>
+
+            <div class="album-images-container">
+                <!-- Images will be added here via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="live">
+        <h1 style="padding: 20px;">Live Streaming</h1>
+        <div class="youtube-live" id="video-container">
+            <p style="padding: 20px;">Loading live video...</p>
+        </div>
+    </div>
 
 </div>
 <h1> </h1>
@@ -196,6 +263,7 @@
 <script src="youtubelive.js"></script>
 <script src="notes.js"></script>
 <script src="dark-mode.js"></script>
+<script src="albums-stack.js"></script>
 
 <!-- Fullscreen Modal -->
 <div class="fullscreen-modal" id="fullscreenModal" onclick="closeFullscreen()">
