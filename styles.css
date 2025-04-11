@@ -5,6 +5,11 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'high tower text';
+    src: url('fonts/hightower.TTF') format('truetype');
+}
+
 body {
     font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
     margin: 0;
