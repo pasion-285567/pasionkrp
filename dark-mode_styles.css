@@ -7,29 +7,29 @@ body.dark-mode {
 }
 
 .dark-mode .nav-button span {
-    color: yellow !important;
+    color: #1877F2 !important;
     transition: 0.5s;
 }
 
 .dark-mode .navbar.scrolled {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
     color: white;
-    transition: 0.5s ease
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
 }
 
 .dark-mode .navbar.scrolled .nav-button {
-    background-color: #333;
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     border-color: white;
 }
 
 .dark-mode .about-name {
-    color: yellow;
+    color: #1877F2;
 }
 
 .dark-mode .about-info,
-.dark-mode .popup,
 .dark-mode .fullscreen-modal {
     background-color: #333;
     color: white;
@@ -59,12 +59,12 @@ body.dark-mode {
 }
 
 .dark-mode .logo {
-    color: yellow;
+    color: #1877F2;
     transition: opacity, color 0.5s;
 }
 
 .dark-mode .navbar.scrolled .menu-icon {
-    color: yellow;
+    color: #1877F2;
 }
 
 .dark-mode .hero {
@@ -80,7 +80,7 @@ body.dark-mode {
 }
 
 .dark-mode .nav-button img {
-    filter: invert(83%) sepia(100%) saturate(500%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    filter: invert(40%) sepia(88%) saturate(2047%) hue-rotate(201deg) brightness(97%) contrast(97%);
     transition: 0.5s;
 }
 
@@ -90,5 +90,17 @@ body.dark-mode {
 }
 
 .dark-mode .socmed {
-    color: yellow;
+    color: #1877F2;
+}
+
+.dark-mode .popup {
+    background-color: rgba(51, 51, 51, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    color: white;
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
+    box-shadow: 
+        inset 0 0 0 4px rgba(255, 255, 255, 0.15),
+        0 0 0 1px rgba(0, 0, 0, 0.2),
+        0 8px 12px rgba(0, 0, 0, 0.3);
 }
