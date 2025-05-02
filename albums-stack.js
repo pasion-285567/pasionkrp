@@ -1,96 +1,57 @@
-// Albums data structure - update with your actual album data
-const albumsData = {
-    "album1": {
-        title: "Best Friends",
-        count: "7 photos",
-        previewImages: [
-            "Albums/Album1/image1.jpg",
-            "Albums/Album1/image2.jpg", 
-            "Albums/Album1/image3.jpg"
-        ],
-        images: [
-            "Albums/Album1/image1.jpg",
-            "Albums/Album1/image2.jpg",
-            "Albums/Album1/image3.jpg",
-            "Albums/Album1/image4.jpg",
-            "Albums/Album1/image5.jpg",
-            "Albums/Album1/image6.jpg",
-            "Albums/Album1/image7.jpg"
-            // Add more images as needed
-        ]
-    },
-    "album2": {
-        title: "Lokal ng Sta. Maria",
-        count: "8 photos",
-        previewImages: [
-            "Albums/Album2/image1.jpg",
-            "Albums/Album2/image2.jpg", 
-            "Albums/Album2/image3.jpg"
-        ],
-        images: [
-            "Albums/Album2/image1.jpg",
-            "Albums/Album2/image2.jpg",
-            "Albums/Album2/image3.jpg",
-            "Albums/Album2/image4.jpg",
-            "Albums/Album2/image5.jpg",
-            "Albums/Album2/image6.jpg",
-            "Albums/Album2/image7.jpg",
-            "Albums/Album2/image8.jpg",
-            "Albums/Album2/image9.jpg",
-            "Albums/Album2/image10.jpg"
-        ]
-    },
+import { albumsData } from './albumsData.js';
 
-    "album3": {
-        title: "Lokal ng Catmon",
-        count: "9 photos",
-        previewImages: [
-            "Albums/Album3/image1.jpg",
-            "Albums/Album3/image2.jpg", 
-            "Albums/Album3/image3.jpg"
-        ],
-        images: [
-            "Albums/Album3/image1.jpg",
-            "Albums/Album3/image2.jpg",
-            "Albums/Album3/image3.jpg",
-            "Albums/Album3/image4.jpg",
-            "Albums/Album3/image5.jpg",
-            "Albums/Album3/image6.jpg",
-            "Albums/Album3/image7.jpg",
-            "Albums/Album3/image8.jpg",
-            "Albums/Album3/image9.jpg",
-        ]
-    },
+function createAlbumElement(albumId, albumData) {
+    return `
+        <div class="album" data-album-id="${albumId}">
+            <div class="photo-stack">
+                <div class="stack-photo photo-3" style="background-image: url('${albumData.previewImages[2]}')"></div>
+                <div class="stack-photo photo-2" style="background-image: url('${albumData.previewImages[1]}')"></div>
+                <div class="stack-photo photo-1" style="background-image: url('${albumData.previewImages[0]}')"></div>
+            </div>
+            <div class="album-info">
+                <div class="album-title">${albumData.title}</div>
+                <div class="album-count">${albumData.count}</div>
+            </div>
+        </div>
+    `;
+}
 
-    "album4": {
-        title: "Brianna & Paula",
-        count: "9 photos",
-        previewImages: [
-            "Albums/Album4/image1.jpg",
-            "Albums/Album4/image2.jpg", 
-            "Albums/Album4/image3.jpg"
-        ],
-        images: [
-            "Albums/Album4/image1.jpg",
-            "Albums/Album4/image2.jpg",
-            "Albums/Album4/image3.jpg",
-            "Albums/Album4/image4.jpg",
-            "Albums/Album4/image5.jpg",
-            "Albums/Album4/image6.jpg",
-            "Albums/Album4/image7.jpg",
-            "Albums/Album4/image8.jpg",
-            "Albums/Album4/image9.jpg",
-            "Albums/Album4/image10.jpg",
-        ]
+function loadAlbums() {
+    const albumsContainer = document.querySelector('.albums-stack');
+    const albumsHTML = Object.entries(albumsData)
+        .map(([albumId, albumData]) => createAlbumElement(albumId, albumData))
+        .join('');
+    albumsContainer.innerHTML = albumsHTML;
+}
 
-        
-    },
-    // Add more albums as needed
-};
+function openAlbumModal(albumId) {
+    const album = albumsData[albumId];
+    if (!album) return;
+    
+    document.getElementById('albumModalTitle').textContent = album.title;
+    const albumImagesContainer = document.querySelector('.album-images-container');
+    albumImagesContainer.innerHTML = '';
+    
+    album.images.forEach(imageSrc => {
+        const imgElement = document.createElement('img');
+        imgElement.src = imageSrc;
+        imgElement.alt = "Album Image";
+        imgElement.addEventListener('click', () => openFullscreen(imageSrc));
+        albumImagesContainer.appendChild(imgElement);
+    });
+    
+    document.getElementById('albumModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
 
-// When document is ready
+function closeAlbumModal() {
+    document.getElementById('albumModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Set up event listeners for all albums
+    loadAlbums();
+    
     document.querySelectorAll('.album').forEach(album => {
         album.addEventListener('click', function() {
             const albumId = this.dataset.albumId;
@@ -98,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close album modal when clicking outside content
     const albumModal = document.getElementById('albumModal');
     window.addEventListener('click', function(event) {
         if (event.target === albumModal) {
@@ -106,51 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Add keyboard navigation for album modal
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && albumModal.style.display === 'block') {
             closeAlbumModal();
         }
     });
 });
-
-// Open album modal
-function openAlbumModal(albumId) {
-    const album = albumsData[albumId];
-    if (!album) return;
-    
-    // Set modal title
-    document.getElementById('albumModalTitle').textContent = album.title;
-    
-    // Get container for album images
-    const albumImagesContainer = document.querySelector('.album-images-container');
-    
-    // Clear previous content
-    albumImagesContainer.innerHTML = '';
-    
-    // Add all images to the modal
-    album.images.forEach(imageSrc => {
-        const imgElement = document.createElement('img');
-        imgElement.src = imageSrc;
-        imgElement.alt = "Album Image";
-        
-        // Use your existing openFullscreen function
-        imgElement.addEventListener('click', function() {
-            openFullscreen(imageSrc);
-        });
-        
-        albumImagesContainer.appendChild(imgElement);
-    });
-    
-    // Show album modal
-    document.getElementById('albumModal').style.display = 'block';
-    
-    // Prevent body scrolling
-    document.body.style.overflow = 'hidden';
-}
-
-// Close album modal
-function closeAlbumModal() {
-    document.getElementById('albumModal').style.display = 'none';
-    document.body.style.overflow = 'auto';
-}

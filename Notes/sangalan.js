@@ -1,32 +1,35 @@
-const sangalanContent = `
-<h2>Sa Ngalan ng Pag-ibig</h2>
-<p>Maghihintay ako <br>
-Hanggang mapa sa 'yo<br>
-Gaano man katagal ito<br>
-Sa 'yo'y hindi susuko </p>
+export const sangalanContent = {
+    title: "Sa Ngalan ng Pag-ibig",
+    preview: "Maghihintay ako",
+    content: `
+Maghihintay ako
+Hanggang mapa sa 'yo
+Gaano man katagal ito
+Sa 'yo'y hindi susuko
 
-<p>Mahal kita, siyang tugon nito<br>
-Ang puso ko'y hindi nagbibiro<br>
-Ang damdamin ko'y hindi natutuliro<br>
-Ikaw lang ang pipiliin ko</p>
+Mahal kita, siyang tugon nito
+Ang puso ko'y hindi nagbibiro
+Ang damdamin ko'y hindi natutuliro
+Ikaw lang ang pipiliin ko
 
-<p>Gagawin ko ang lahat para lang sa 'yo<br>
-Makamit ko lamang ang matamis mong oo<br>
-Ipaglalaban ko ang nararamdaman ko<br>
-Pagmamahal ko, ipapadama lagi sa 'yo</p>
+Gagawin ko ang lahat para lang sa 'yo
+Makamit ko lamang ang matamis mong oo
+Ipaglalaban ko ang nararamdaman ko
+Pagmamahal ko, ipapadama lagi sa 'yo
 
-<p>Hanggang kailan ba ako maghihintay<br>
-Para ako'y maging kabiyak mo ng buhay<br>
-Kailan kaya ang pag-ibig mo'y sisilay<br>
-Para ang ilaw ng damdamin ko'y mabuhay</p>
+Hanggang kailan ba ako maghihintay
+Para ako'y maging kabiyak mo ng buhay
+Kailan kaya ang pag-ibig mo'y sisilay
+Para ang ilaw ng damdamin ko'y mabuhay
 
-<p>Sofhia Rose, mahal na mahal kita<br>
-Datnan man ng kalamidad at sakuna<br>
-Ang pag-ibig ko'y hindi masasalanta<br>
-Ikaw lang ang iibigin ko sinta</p>
+Sofhia Rose, mahal na mahal kita
+Datnan man ng kalamidad at sakuna
+Ang pag-ibig ko'y hindi masasalanta
+Ikaw lang ang iibigin ko sinta
 
-<p>Palaging sa iyo ipapadama ang pag-ibig<br>
-Pagtingin sa 'yo lamang ipapahiwatig<br>
-Pagmamahal ko'y aking ipapalawig<br>
-Maghihintay ako, sa ngalan ng pag-ibig</p>
-`;
+Palaging sa iyo ipapadama ang pag-ibig
+Pagtingin sa 'yo lamang ipapahiwatig
+Pagmamahal ko'y aking ipapalawig
+Maghihintay ako, sa ngalan ng pag-ibig
+    `
+};

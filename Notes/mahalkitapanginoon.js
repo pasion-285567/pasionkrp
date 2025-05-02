@@ -1,72 +1,75 @@
-const mahalkitapanginoonContent = `
-<h2>Mahal Kita Panginoon</h2>
-<p>Mahal na mahal Kita Panginoon<br>
-Kaya paglilingkuran ka nang marapat<br>
-Sisikapin kong sa ‘Yo’y maging dapat<br>
-Hanggang ang aking paa ay lumapat</p>
+export const mahalkitapanginoonContent = {
+    title: "Mahal Kita Panginoon",
+    preview: "Mahal na mahal Kita Panginoon",
+    content: `
+Mahal na mahal Kita Panginoon
+Kaya paglilingkuran ka nang marapat
+Sisikapin kong sa 'Yo'y maging dapat
+Hanggang ang aking paa ay lumapat
 
-<p>Iniibig kita nang buong puso<br>
-Lakas, isip at kaluluwa ko<br>
-Ang buhay ko’y iaalay sa ‘Yo<br>
-Upang matupad ang kalooban Mo</p>
+Iniibig kita nang buong puso
+Lakas, isip at kaluluwa ko
+Ang buhay ko'y iaalay sa 'Yo
+Upang matupad ang kalooban Mo
 
-<p>Tutuparin ko ang Iyong katuwiran<br>
-Maging ang Iyong mga kautusan<br>
-Ito’y isang aking pagpapatunay<br>
-Na Ika’y iniibig kong tunay</p>
+Tutuparin ko ang Iyong katuwiran
+Maging ang Iyong mga kautusan
+Ito'y isang aking pagpapatunay
+Na Ika'y iniibig kong tunay
 
-<p>Ako’y gaganap ng mga katungkulan<br>
-At ito’y aking pagtatapatan<br>
-Hinding-hindi ko ito pababayaan<br>
-Hanggang sa aking kawakasan</p>
+Ako'y gaganap ng mga katungkulan
+At ito'y aking pagtatapatan
+Hinding-hindi ko ito pababayaan
+Hanggang sa aking kawakasan
 
-<p>Ang aking talentong pagtugtog<br>
-Lagi sa ‘Yo’y ihahandog<br>
-Sa bawat notang aking tinutugtog<br>
-Nawa ako sa 'Yo'y makalugod</p>
+Ang aking talentong pagtugtog
+Lagi sa 'Yo'y ihahandog
+Sa bawat notang aking tinutugtog
+Nawa ako sa 'Yo'y makalugod
 
-<p>Patuloy na mag-iingat ng tipan<br>
-Itatama ang pakikipagkasintahan<br>
-Kaya hinding-hindi makikipagtipan<br>
-Sa taong walang katuwiran</p>
+Patuloy na mag-iingat ng tipan
+Itatama ang pakikipagkasintahan
+Kaya hinding-hindi makikipagtipan
+Sa taong walang katuwiran
 
-<p>Bilang pagmamahal ko sa Iyo<br>
-Iibigin ko ang iniibig Mo<br>
-Mamahalin ang Iyong Gawain<br>
-Maging ang Iyong mga alipin</p>
+Bilang pagmamahal ko sa Iyo
+Iibigin ko ang iniibig Mo
+Mamahalin ang Iyong Gawain
+Maging ang Iyong mga alipin
 
-<p>Ipakikilala sa iba ang kabutihan Mo<br>
-Ipakikita ang kagandahan Mo<br>
-Upang sila man ay mailapit sa 'Yo<br>
-Mahalin kang tunay at buong-buo</p>
+Ipakikilala sa iba ang kabutihan Mo
+Ipakikita ang kagandahan Mo
+Upang sila man ay mailapit sa 'Yo
+Mahalin kang tunay at buong-buo
 
-<p>Ikaw lamang ang aking sasambahin<br>
-At buong puso kong iibigin<br>
-Ikaw lang ang aking pupurihin<br>
-Luluwalhatiin at dadakilain</p>
+Ikaw lamang ang aking sasambahin
+At buong puso kong iibigin
+Ikaw lang ang aking pupurihin
+Luluwalhatiin at dadakilain
 
-<p>Hindi ko malilimot ang kabutihan Mo sa ‘kin<br>
-Mga pagpapalang kaloob Mo sa ‘kin<br>
-Lalo’t higit ang biyayang tungkulin<br>
-Ama nawa’y lagi Mong gagamitin</p>
+Hindi ko malilimot ang kabutihan Mo sa 'kin
+Mga pagpapalang kaloob Mo sa 'kin
+Lalo't higit ang biyayang tungkulin
+Ama nawa'y lagi Mong gagamitin
 
-<p>Sa ‘Yo lang ako magpapaangkin<br>
-At laging magpapaalipin<br>
-Sa diablo’y hindi magpapaangkin<br>
-Ama nawa’y laging lingapin</p>
+Sa 'Yo lang ako magpapaangkin
+At laging magpapaalipin
+Sa diablo'y hindi magpapaangkin
+Ama nawa'y laging lingapin
 
-<p>Ako sa ‘Yo’y laging mananalangin<br>
-Na iyong lingkod na sa ‘Yo’y dumadaing<br>
-Ako'y magiging maningas manalangin<br>
-Ama'y lagi Mo pong diringgin</p>
+Ako sa 'Yo'y laging mananalangin
+Na iyong lingkod na sa 'Yo'y dumadaing
+Ako'y magiging maningas manalangin
+Ama'y lagi Mo pong diringgin
 
-<p>Ako'y sasama sa Iyong kaharian<br>
-Magiging tabernakulo Mong walang hanggan<br>
-Upang makasama Mo magpakailanman<br>
-Oh Ama sana'y Iyong ipakamtan</p>
+Ako'y sasama sa Iyong kaharian
+Magiging tabernakulo Mong walang hanggan
+Upang makasama Mo magpakailanman
+Oh Ama sana'y Iyong ipakamtan
 
-<p>Pangako ng aking puso, hanggang sa magpakailanman<br>
-Ikaw lang ang magiging Dios magpakailanman<br>
-Ikaw lang ang sasambahin at pupurihin<br>
-Dahil mahal na mahal kita Panginoon</p>
-`;
+Pangako ng aking puso, hanggang sa magpakailanman
+Ikaw lang ang magiging Dios magpakailanman
+Ikaw lang ang sasambahin at pupurihin
+Dahil mahal na mahal kita Panginoon
+    `
+};

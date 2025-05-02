@@ -1,28 +1,30 @@
-const hinditayopwedeContent = `
-<h2>Hindi Tayo Pwede</h2>
+export const hinditayopwedeContent = {
+    title: "Hindi Tayo Pwede",
+    preview: "Sa bawat sandali ng ating pag-ibig",
+    content: `
+Sa bawat sandali ng ating pag-ibig
+May lungkot na lihim, di kayang ipilit
+Kahit gaano natin subuking manatili
+Ang pag-ibig, hindi sa 'tin napili
 
-<p>Sa bawat sandali ng ating pag-ibig <br>
-May lungkot na lihim, di kayang ipilit<br>
-Kahit gaano natin subuking manatili<br>
-Ang pag-ibig, hindi sa 'tin napili </p>
+Sa bawat halakhak, sa bawat luha
+May hangganan na tila di kayang maunawa
+Tulad ng bituin na di nagtatagpo
+Ang mga puso natin ay magkaibang mundo
 
-<p>Sa bawat halakhak, sa bawat luha<br>
-May hangganan na tila di kayang maunawa<br>
-Tulad ng bituin na di nagtatagpo<br>
-Ang mga puso natin ay magkaibang mundo</p>
+Ang ating mga daan ay nag-abot sandali
+Ngunit 'di sapat upang tayo'y magsilagi
+May mga kwento na hanggang dito na lang
+At tayo ang kwentong 'di kayang mapalawig
 
-<p>Ang ating mga daan ay nag-abot sandali<br>
-Ngunit 'di sapat upang tayo’y magsilagi<br>
-May mga kwento na hanggang dito na lang<br>
-At tayo ang kwentong 'di kayang mapalawig</p>
+Kahit mahal kita ng buong buo
+May mga bagay na hindi totoo
+Ang puso ay umaasa, ngunit alam din
+Na hindi tayo itinadhana sa hangin
 
-<p>Kahit mahal kita ng buong buo<br>
-May mga bagay na hindi totoo<br>
-Ang puso ay umaasa, ngunit alam din<br>
-Na hindi tayo itinadhana sa hangin</p>
-
-<p>Sa huli, kailangan nating tanggapin<br>
-Na hindi lahat ng pagmamahal ay mananatiling taimtim<br>
-Ikaw at ako, kahit anong gawin<br>
-Ang tadhana ay hindi magiging para sa 'tin</p>
-`;
+Sa huli, kailangan nating tanggapin
+Na hindi lahat ng pagmamahal ay mananatiling taimtim
+Ikaw at ako, kahit anong gawin
+Ang tadhana ay hindi magiging para sa 'tin
+    `
+};

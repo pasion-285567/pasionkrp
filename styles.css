@@ -312,3 +312,15 @@ body {
     display: block;
     border: none;
 }
+
+.popup-content {
+    line-height: 1.4;
+}
+
+.popup-content .stanza {
+    margin-bottom: 1.5em;
+}
+
+.popup-content .stanza:last-child {
+    margin-bottom: 0;
+}
