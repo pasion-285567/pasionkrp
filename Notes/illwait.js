@@ -1,6 +1,6 @@
 export const illwaitContent = {
     title: "I'll Wait for You",
-    preview: "In the quiet of dawn, where the soft light breaks",
+    preview: "In the quiet of dawn, where the",
     content: `
 In the quiet of dawn, where the soft light breaks
 I'll wait for you, for the heart that aches

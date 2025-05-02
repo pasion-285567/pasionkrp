@@ -1,36 +1,26 @@
-// Function to get list of note files from directory
-async function getNotesList() {
-    try {
-        const response = await fetch('Notes/');
-        const text = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, 'text/html');
-        const files = Array.from(doc.querySelectorAll('a'))
-            .map(a => a.href)
-            .filter(href => href.endsWith('.js'))
-            .map(href => href.split('/').pop().replace('.js', ''));
-        return files;
-    } catch (error) {
-        console.error('Error getting notes list:', error);
-        return [];
-    }
-}
+import { mahalmoakopanginoonContent } from './Notes/mahalmoakopanginoon.js';
+import { mahalkitapanginoonContent } from './Notes/mahalkitapanginoon.js';
+import { symphonyContent } from './Notes/symphony.js';
+import { sofhiaContent } from './Notes/sofhia.js';
+import { panalanginContent } from './Notes/panalangin.js';
+import { parasataongContent } from './Notes/parasataong.js';
+import { hinditayopwedeContent } from './Notes/hinditayopwede.js';
+import { imalwayshereContent } from './Notes/Imalwayshere.js';
+import { sangalanContent } from './Notes/sangalan.js';
+import { illwaitContent } from './Notes/illwait.js';
+import { sasusunodContent } from './Notes/sasusunod.js';
 
-export const notesData = {};
-
-// Initialize notesData
-(async () => {
-    const noteFiles = await getNotesList();
-    for (const noteId of noteFiles) {
-        try {
-            const module = await import(`./Notes/${noteId}.js`);
-            const content = module[`${noteId}Content`];
-            notesData[noteId] = {
-                title: content.title,
-                preview: content.preview
-            };
-        } catch (error) {
-            console.error(`Error loading note ${noteId}:`, error);
-        }
-    }
-})();
+// Map the note contents from individual files
+export const notesData = {
+    'mahalmoakopanginoon': mahalmoakopanginoonContent,
+    'mahalkitapanginoon': mahalkitapanginoonContent,
+    'symphony': symphonyContent,
+    'sofhia': sofhiaContent,
+    'panalangin': panalanginContent,
+    'parasataong': parasataongContent,
+    'hinditayopwede': hinditayopwedeContent,
+    'Imalwayshere': imalwayshereContent,
+    'sangalan': sangalanContent,
+    'illwait': illwaitContent,
+    'sasusunod': sasusunodContent
+};
