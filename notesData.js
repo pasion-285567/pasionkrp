@@ -5,7 +5,7 @@ import { sofhiaContent } from './Notes/sofhia.js';
 import { panalanginContent } from './Notes/panalangin.js';
 import { parasataongContent } from './Notes/parasataong.js';
 import { hinditayopwedeContent } from './Notes/hinditayopwede.js';
-import { imalwayshereContent } from './Notes/Imalwayshere.js';
+import { imalwayshereContent } from './Notes/imalwayshere.js';
 import { sangalanContent } from './Notes/sangalan.js';
 import { illwaitContent } from './Notes/illwait.js';
 import { sasusunodContent } from './Notes/sasusunod.js';
@@ -19,7 +19,7 @@ export const notesData = {
     'panalangin': panalanginContent,
     'parasataong': parasataongContent,
     'hinditayopwede': hinditayopwedeContent,
-    'Imalwayshere': imalwayshereContent,
+    'imalwayshere': imalwayshereContent,
     'sangalan': sangalanContent,
     'illwait': illwaitContent,
     'sasusunod': sasusunodContent
