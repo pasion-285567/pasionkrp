@@ -1,4 +1,4 @@
-import { notesData } from '.Notes/notesData.js'; // Adjust the path as necessary
+import { notesData } from './notesData.js'; // Adjust the path as necessary
 
 async function importNoteContent(noteId) {
     try {
