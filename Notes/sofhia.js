@@ -1,5 +1,5 @@
 export const sofhiaContent = {
-    title: "Sofhia",
+    title: "\"Sofhia\"",
     preview: "Soft whispers linger in the night",
     content: `
 Soft whispers linger in the night,

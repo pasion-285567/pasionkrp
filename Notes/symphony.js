@@ -1,5 +1,5 @@
 export const symphonyContent = {
-    title: "Sofhia Rose",
+    title: "\"Sofhia Rose\"",
     preview: "Serenades of love, I sing for you",
     content: `
 Serenades of love, I sing for you,
