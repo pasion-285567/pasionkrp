@@ -1,0 +1,106 @@
+body.dark-mode {
+    --body-bg-color: #333;
+    --dark-main-color: white;
+    background-color: var(--body-bg-color);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.dark-mode .nav-button span {
+    color: #1877F2 !important;
+    transition: 0.5s;
+}
+
+.dark-mode .navbar.scrolled {
+    background-color: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    color: white;
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
+}
+
+.dark-mode .navbar.scrolled .nav-button {
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-color: white;
+}
+
+.dark-mode .about-name {
+    color: #1877F2;
+}
+
+.dark-mode .about-info,
+.dark-mode .fullscreen-modal {
+    background-color: #333;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.dark-mode .blog-placeholder {
+    background-color: #333;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .album-image,
+.dark-mode .profile-container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .album-container {
+    scrollbar-color: #777 #333;
+    transition: scrollbar-color 0.3s ease
+}
+
+.sidebar {
+    background-color: #333;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.dark-mode .logo {
+    color: #1877F2;
+    transition: opacity, color 0.5s;
+}
+
+.dark-mode .navbar.scrolled .menu-icon {
+    color: #1877F2;
+}
+
+.dark-mode .hero {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, var(--body-bg-color) 100%),
+        url('Profiles/profile.jpg') no-repeat center center/cover;
+    transition: all 0.5s ease;
+}
+
+.dark-mode .profile-container {
+    border: 5px solid #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: border 0.3s;
+}
+
+.dark-mode .nav-button img {
+    filter: invert(40%) sepia(88%) saturate(2047%) hue-rotate(201deg) brightness(97%) contrast(97%);
+    transition: 0.5s;
+}
+
+.dark-mode .nav-button span {
+    color: var(--dark-main-color);
+    transition: 0.5s;
+}
+
+.dark-mode .socmed {
+    color: #1877F2;
+}
+
+.dark-mode .popup {
+    background-color: rgba(51, 51, 51, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    color: white;
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
+    box-shadow: 
+        inset 0 0 0 4px rgba(255, 255, 255, 0.15),
+        0 0 0 1px rgba(0, 0, 0, 0.2),
+        0 8px 12px rgba(0, 0, 0, 0.3);
+}

@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bro. Raymund's Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles-1024p.css">
-    <link rel="stylesheet" href="styles-1078p.css">
-    <link rel="stylesheet" href="styles-716p.css">
-    <link rel="stylesheet" href="styles-660p.css">
-    <link rel="stylesheet" href="dark-mode_styles.css">
-    <link rel="stylesheet" href="dark-mode-switch.css">
-    <link rel="stylesheet" href="yt-live.css">
-    <link rel="stylesheet" href="album-stack.css">
+    <link rel="stylesheet" href="Styles/styles.css">
+    <link rel="stylesheet" href="Styles/dark-mode_styles.css">
+    <link rel="stylesheet" href="Styles/dark-mode-switch.css">
+    <link rel="stylesheet" href="Styles/yt-live.css">
+    <link rel="stylesheet" href="Styles/album-stack.css">
+    <link rel="stylesheet" href="Styles/Responsive UI/styles-1024p.css">
+    <link rel="stylesheet" href="Styles/Responsive UI/styles-1078p.css">
+    <link rel="stylesheet" href="Styles/Responsive UI/styles-716p.css">
+    <link rel="stylesheet" href="Styles/Responsive UI/styles-660p.css">
     <link rel="icon" href="Profiles/favicon.png">
 </head>
 
@@ -105,30 +105,25 @@
     <!-- Albums will be loaded here via JavaScript -->
 </div>
 
-        <!-- Add more albums as needed -->
-    </div>
+<!-- Album Modal -->
+<div id="albumModal" class="album-modal">
+    <div class="album-modal-content">
+        <span class="album-close-button" onclick="closeAlbumModal()">&times;</span>
+        <h2 id="albumModalTitle">Album Title</h2>
 
-    <!-- Album Modal -->
-    <div id="albumModal" class="album-modal">
-        <div class="album-modal-content">
-            <span class="album-close-button" onclick="closeAlbumModal()">&times;</span>
-            <h2 id="albumModalTitle">Album Title</h2>
-
-            <div class="album-images-container">
-                <!-- Images will be added here via JavaScript -->
-            </div>
+        <div class="album-images-container">
+            <!-- Images will be added here via JavaScript -->
         </div>
     </div>
-
-    <div class="section" id="live">
-        <h1 style="padding: 20px;">Live Streaming</h1>
-        <div class="youtube-live" id="video-container">
-            <p style="padding: 20px;">Loading live video...</p>
-        </div>
-    </div>
-
 </div>
-<h1> </h1>
+
+<div class="section" id="live">
+    <h1 style="padding: 20px;">Live Streaming</h1>
+    <div class="youtube-live" id="video-container">
+        <p style="padding: 20px;">Loading live video...</p>
+    </div>
+</div>
+
 <h1 style="padding: 20px">Notes</h1>
 <div class="section" id="notes">
     <!-- Notes will be loaded here via JavaScript -->
@@ -141,7 +136,7 @@
 <script src="youtubelive.js"></script>
 <script type="module" src="notes.js"></script>
 <script src="dark-mode.js"></script>
-<script type="module" src="albums-stack.js"></script>
+<script type="module" src="Albums/albums-stack.js"></script>
 
 <!-- Fullscreen Modal -->
 <div class="fullscreen-modal" id="fullscreenModal" onclick="closeFullscreen()">

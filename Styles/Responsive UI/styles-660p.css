@@ -1,0 +1,103 @@
+@media (max-width: 660px) {
+    .hero-text {
+        font-size: 36px;
+    }
+
+    .album-container {
+        grid-template-columns: 1fr;
+    }
+
+    .album-image {
+        width: 254px;
+        height: 190px;
+    }
+
+    .navbar {
+        padding: 10px 0px;
+    }
+
+    .logo {
+        display: flex;
+        grid-column: 2 !important;
+        text-align: center;
+        margin: 0 auto;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-items: center !important;
+        margin-bottom: 8px
+    }
+
+    .nav-links {
+        grid-column: 1 / 4;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        z-index: 999;
+        gap: auto;
+        margin-right: auto;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-button {
+        background-color: transparent;
+        padding: 5px;
+        padding: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .nav-button img {
+        display: block;
+        max-width: 30px;
+        border: none;
+    }
+
+    .nav-button span {
+        display: none;
+        border: none;
+    }
+
+    .about-info {
+        flex-direction: column;
+    }
+
+    .about-name {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .about-details {
+        text-align: center;
+    }
+
+    .profile-container {
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-text {
+        text-align: left;
+        margin: auto;
+    }
+
+    .albums-stack {
+    gap: 20px !important; 
+    padding: 40px !important;
+}
+    .photo-stack {
+    position: relative;
+    height: 180px !important;
+    margin-bottom: 15px;
+}
+    .stack-photo {
+    width: 140px !important;
+    height: 140px !important;
+}
+
+}

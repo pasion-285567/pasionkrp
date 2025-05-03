@@ -1,0 +1,39 @@
+.yt-live {
+    width: 854px;
+    height: 480px;
+    padding: 20px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 960px) {
+    .yt-live {
+        width: 804px;
+        height: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 840px) {
+    .yt-live {
+        width: 640px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 720px) {
+    .yt-live {
+        width: 426px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .yt-live {
+        width: 320px;
+        height: 180px;
+    }
+}

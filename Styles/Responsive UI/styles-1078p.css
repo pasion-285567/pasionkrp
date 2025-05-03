@@ -1,0 +1,76 @@
+@media (max-width: 1078px) {
+    .navbar {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+    }
+
+    .logo {
+        grid-column: 1;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        z-index: 999;
+        margin-left: auto;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-button {
+        display: flex;
+        background-color: transparent;
+        padding: 5px;
+        padding: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border: none !important;
+        box-shadow: none !important;
+        flex-direction: row;
+    }
+
+    .nav-button img {
+        display: block;
+        max-width: 30px;
+        border: none;
+    }
+
+    .nav-button span {
+        display: none;
+        border: none;
+    }
+
+    .profile-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .album-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .popup {
+        width: 90%;
+        height: 80vh;
+        font-size: 16px;
+    }
+
+    .blog-placeholder {
+        width: calc(100% - 40px);
+        margin: 10px;
+    }
+
+    #notes {
+        padding: 15px;
+        margin: 0 10px;
+    }
+
+}
