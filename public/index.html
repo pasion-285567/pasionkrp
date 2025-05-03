@@ -1,89 +1,147 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.6.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.6.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bro. Raymund's Page</title>
+    <link rel="stylesheet" href="Styles/styles.css">
+    <link rel="stylesheet" href="Styles/dark-mode_styles.css">
+    <link rel="stylesheet" href="Styles/dark-mode-switch.css">
+    <link rel="stylesheet" href="Styles/yt-live.css">
+    <link rel="stylesheet" href="Styles/album-stack.css">
+    <link rel="stylesheet" href="Styles/Responsive UI/styles-1024p.css">
+    <link rel="stylesheet" href="Styles/Responsive UI/styles-1078p.css">
+    <link rel="stylesheet" href="Styles/Responsive UI/styles-716p.css">
+    <link rel="stylesheet" href="Styles/Responsive UI/styles-660p.css">
+    <link rel="icon" href="Profiles/favicon.png">
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<div class="navbar" id="navbar">
+    <span class="logo" id="navbarLogo">Kurt Raymund Pasion</span>
+    <div class="nav-links" id="navLinks">
+        <button class="nav-button" onclick="scrollToSection('home')">
+            <img src="icons/home.png" alt="Notes" class="mobile-image">
+            <span>Home</span>
+        </button>
+        <button class="nav-button" onclick="scrollToSection('about')">
+            <img src="icons/about.png" alt="About" class="mobile-image">
+            <span>About</span>
+        </button>
+        <button class="nav-button" onclick="scrollToSection('albums')">
+            <img src="icons/albums.webp" alt="Albums" class="mobile-image">
+            <span>Albums</span>
+        </button>
+        <button class="nav-button" onclick="scrollToSection('live')">
+            <img src="icons/live.png" alt="Live" class="mobile-image">
+            <span>Live</span>
+        </button>
+        <button class="nav-button" onclick="scrollToSection('notes')">
+            <img src="icons/notes.png" alt="Notes" class="mobile-image">
+            <span>Notes</span>
+        </button>
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+        </label>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+</div>
+<div class="section" id="home">
+    <div class="hero" id="hero">
+        <div class="hero-text" id="heroText">Hi! I'm Kurt Raymund Pasion</div>
+    </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <div class="about-info section" id="about">
+        <div class="profile-container">
+            <img src="Profiles/profile1.jpg" alt="Profile Picture">
+        </div>
+        <div class="about-text">
+            <h1 class="about-name">Pasion, Kurt Raymund P.</h1>
+            <p class="about-details">Pianist - a person who plays the piano, especially professionally.<br>Papunta pa
+                lang ako, nagkaklase na kayo.</p>
+            <p><strong>Lives in: </strong>Catmon, Santa Maria, Bulacan<br>
+                <strong>Birthday: </strong>March 28, 2004<br>
+                <strong>Studies at: </strong>STI College Sta. Maria
+            </p>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+            <h2>Social Media Accounts:</h2>
+            <p><strong>Facebook: </strong><a class="socmed" href="https://www.facebook.com/bro.emond"
+                    target="_blank">@bro.emond</a><br>
+                <strong>Instagram: </strong><a class="socmed" href="https://www.instagram.com/bro._raymund"
+                    target="_blank">@bro._raymund</a><br>
+                <strong>TikTok: </strong><a class="socmed" href="https://www.tiktok.com/bro._raymund"
+                    target="_blank">@bro._raymund</a><br>
+                <strong>Threads: </strong><a class="socmed" href="https://www.threads.net/bro._raymund"
+                    target="_blank">@bro._raymund</a>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="section" id="albums">
+    <h1 class style="padding: 20px">Personal Album</h1>
+    <div class="album-container">
+
+        <img src="Profiles/image1.jpg" alt="Album 1" class="album-image"
+            onclick="openFullscreen('Profiles/image1.jpg')">
+        <img src="Profiles/image2.jpg" alt="Album 2" class="album-image"
+            onclick="openFullscreen('Profiles/image2.jpg')">
+        <img src="Profiles/image3.jpg" alt="Album 3" class="album-image"
+            onclick="openFullscreen('Profiles/image3.jpg')">
+        <img src="Profiles/image4.jpg" alt="Album 4" class="album-image"
+            onclick="openFullscreen('Profiles/image4.jpg')">
+        <img src="Profiles/image5.jpg" alt="Album 5" class="album-image"
+            onclick="openFullscreen('Profiles/image5.jpg')">
+        <img src="Profiles/image6.jpg" alt="Album 6" class="album-image"
+            onclick="openFullscreen('Profiles/image6.jpg')">
+        <img src="Profiles/image7.jpg" alt="Album 7" class="album-image"
+            onclick="openFullscreen('Profiles/image7.jpg')">
+        <img src="Profiles/image8.jpg" alt="Album 8" class="album-image"
+            onclick="openFullscreen('Profiles/image8.jpg')">
+    </div>
+</div>
+
+<h1 class style="padding: 20px">Albums</h1>
+<div class="albums-stack">
+    <!-- Albums will be loaded here via JavaScript -->
+</div>
+
+<!-- Album Modal -->
+<div id="albumModal" class="album-modal">
+    <div class="album-modal-content">
+        <span class="album-close-button" onclick="closeAlbumModal()">&times;</span>
+        <h2 id="albumModalTitle">Album Title</h2>
+
+        <div class="album-images-container">
+            <!-- Images will be added here via JavaScript -->
+        </div>
+    </div>
+</div>
+
+<div class="section" id="live">
+    <h1 style="padding: 20px;">Live Streaming</h1>
+    <div class="youtube-live" id="video-container">
+        <p style="padding: 20px;">Loading live video...</p>
+    </div>
+</div>
+
+<h1 style="padding: 20px">Notes</h1>
+<div class="section" id="notes">
+    <!-- Notes will be loaded here via JavaScript -->
+</div>
+<div class="popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
+<div id="popup-container"></div>
+
+<!-- Overall scripts -->
+<script src="scripts.js"></script>
+<script src="youtubelive.js"></script>
+<script type="module" src="notes.js"></script>
+<script src="dark-mode.js"></script>
+<script type="module" src="Albums/albums-stack.js"></script>
+
+<!-- Fullscreen Modal -->
+<div class="fullscreen-modal" id="fullscreenModal" onclick="closeFullscreen()">
+    <img id="fullscreenImage" src="" alt="Fullscreen Image">
+</div>
+</body>
+
 </html>
