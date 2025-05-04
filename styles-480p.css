@@ -3,6 +3,11 @@
         font-size: 36px;
     }
 
+    .hero {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, var(--body-bg-color) 100%),
+            url('Profiles/image9.jpg') no-repeat center center/cover !important;
+    }
+
     .profile-container {
         width: 200px;
         height: 200px;
