@@ -10,6 +10,10 @@
     src: url('fonts/hightower.TTF') format('truetype');
 }
 
+a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
 body {
     font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
     margin: 0;
