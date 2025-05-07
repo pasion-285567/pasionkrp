@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dark-mode_styles.css">
     <link rel="stylesheet" href="dark-mode-switch.css">
-    <link rel="stylesheet" href="yt-live.css">
     <link rel="stylesheet" href="album-stack.css">
     <link rel="stylesheet" href="styles-1024p.css">
     <link rel="stylesheet" href="styles-1078p.css">
     <link rel="stylesheet" href="styles-716p.css">
     <link rel="stylesheet" href="styles-660p.css">
     <link rel="stylesheet" href="styles-480p.css">
+    <link rel="stylesheet" href="player.css">
     <link rel="icon" href="Profiles/favicon.png">
 </head>
 
@@ -121,9 +121,50 @@
 </div>
 
 <div class="section" id="live">
-    <h1 style="padding: 20px;">Live Streaming</h1>
-    <div class="youtube-live" id="video-container">
-        <p style="padding: 20px;">Loading live video...</p>
+    <h1 style="padding: 20px;">Media</h1>
+    <div class="media-container" style="padding: 20px;">
+        <div class=" player-container">
+            <div class="video-container">
+                <video id="videoPlayer">
+                    <source src="solo ko.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="main-play-button" id="mainPlayButton">
+                    <div class="main-play-icon">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="main-pause-icon">
+                        <div class="pause-icon"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="controls-wrapper">
+                <div class="controls-container" id="controlsContainer">
+                    <div class="controls-placeholder">
+                        <div class="buttons-container">
+                            <button class="control-button rewind-btn" id="rewindBtn">
+                                <img src="icons/gobackward-15-svgrepo-com.svg" alt="Go Backward Icon">
+                            </button>
+                            <button class="control-button play-pause-btn" id="playPauseBtn">
+                                <div class="play-icon"></div>
+                                <div class="pause-icon"></div>
+                            </button>
+                            <button class="control-button forward-btn" id="forwardBtn">
+                                <img src="icons/goforward-15-svgrepo-com.svg" alt="Go Forward Icon">
+
+                            </button>
+                            <div class="timestamp" id="timestampProgress">00:00</div>
+                            <div class="timestamp" id="timeSlash">/</div>
+                            <div class="timestamp" id="timestampDuration">00:00</div>
+                        </div>
+                    </div>
+                    <div class="progress-container" id="progressContainer">
+
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -136,10 +177,10 @@
 
 <!-- Overall scripts -->
 <script src="scripts.js"></script>
-<script src="youtubelive.js"></script>
 <script type="module" src="notes.js"></script>
 <script src="dark-mode.js"></script>
 <script type="module" src="albums-stack.js"></script>
+<script src="player.js"></script>
 
 <!-- Fullscreen Modal -->
 <div class="fullscreen-modal" id="fullscreenModal" onclick="closeFullscreen()">
