@@ -298,7 +298,7 @@ border-color: transparent transparent transparent white !important;
     position: absolute;
     width: 5px;
     height: 16px;
-    background-color: black !important;
+    background-color: white !important;
 }
 
 .dark-mode .main-play-button {
