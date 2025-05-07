@@ -1,17 +1,15 @@
 .player-container {
-    max-width: 640px;
+    max-width: 500px;
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-
 }
 
 .video-container {
     width: 100%;
     position: relative;
     background-color: #000;
-
 }
 
 video {
@@ -26,7 +24,7 @@ video {
     transform: translate(-50%, -50%);
     width: 80px;
     height: 80px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -62,11 +60,13 @@ video {
 }
 
 .controls-container {
-    bottom: 15px;    /* Nakaangat ng kaunti sa ilalim */
+    bottom: 9px;
+    /* Nakaangat ng kaunti sa ilalim */
     left: 50%;
     transform: translateX(-50%);
-    width: 92%;    /* Hindi nakasagad sa gilid */
-    background: rgba(0, 0, 0, 0.6);
+    width: 92%;
+    /* Hindi nakasagad sa gilid */
+    background: rgba(255, 255, 255, 0.6);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,7 +83,7 @@ video {
 .progress-container {
     width: 80%;
     height: 8px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     position: relative;
     cursor: pointer;
@@ -106,7 +106,7 @@ video {
 .control-button {
     background: transparent;
     border: none;
-    color: white;
+    color: black;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -119,15 +119,22 @@ video {
     width: 34px;
 }
 
-.rewind-btn img, .forward-btn img {
+.rewind-btn img,
+.forward-btn img {
     width: 100%;
     height: 100%;
-    filter:invert(1);
+    filter: invert(0);
+}
+
+.fullscreen-btn img {
+    width: 15px;
+    height: 15px;
+    filter: invert(0);
 }
 
 .timestamp {
     margin-left: 10px;
-    color: white;
+    color: black;
     font-size: 14px;
 
 }
@@ -138,7 +145,7 @@ video {
     height: 0;
     border-style: solid;
     border-width: 8px 0 8px 16px;
-    border-color: transparent transparent transparent white;
+    border-color: transparent transparent transparent black !important;
 }
 
 /* Pause button icon */
@@ -155,7 +162,7 @@ video {
     position: absolute;
     width: 5px;
     height: 16px;
-    background-color: white;
+    background-color: black !important;
 }
 
 .pause-icon:before {
@@ -168,15 +175,137 @@ video {
 
 
 @media (max-width: 660px) {
-   #timestampDuration {
-    display: none;
-   }
+    #timestampDuration {
+        display: none;
+    }
 
-   #timeSlash {
-    display: none;
-   }
+    #timeSlash {
+        display: none;
+    }
 
-   .buttons-container {
-    width: 150px;
+    .buttons-container {
+        width: 150px;
+    }
+
+    .player-container {
+        max-width: 300px;
+        position: relative;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+
+    }
+
+    .controls-container {
+        bottom: 5px;
+        max-height: 15px;
+        max-width: 90%;
+    }
 }
+
+.media-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #fff;
+    transition: scrollbar-color 0.3s ease;
+}
+
+.player-container {
+
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Fullscreen adjustments */
+html:-webkit-full-screen .video-container,
+html:-moz-full-screen .video-container,
+html:-ms-fullscreen .video-container {
+    z-index: 10;
+    /* Keeps video below custom controls */
+}
+
+html:-webkit-full-screen .controls-container,
+html:-moz-full-screen .controls-container,
+html:-ms-fullscreen .controls-container {
+    z-index: 100;
+    /* Ensures custom controls stay on top */
+}
+
+/* Make video fill the screen */
+html:-webkit-full-screen video,
+html:-moz-full-screen video,
+html:-ms-fullscreen video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    /* Ensures correct aspect ratio */
+}
+
+/* Hide default fullscreen controls */
+html:-webkit-full-screen {
+    overflow: hidden;
+}
+
+html:-moz-full-screen {
+    overflow: hidden;
+}
+
+html:-ms-fullscreen {
+    overflow: hidden;
+}
+
+
+.dark-mode .media-container {
+    scrollbar-color: #777 #333;
+    transition: scrollbar-color 0.3s ease
+}
+
+.dark-mode .controls-container {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.dark-mode .control-button,
+.dark-mode .timestamp {
+    color: white;
+}
+
+.dark-mode .rewind-btn img, .dark-mode .forward-btn img {
+    filter: invert(1);
+}
+
+.dark-mode .fullscreen-btn img {
+    filter: invert(1);
+}
+
+.dark-mode .play-icon {
+border-color: transparent transparent transparent white !important;
+}
+
+.dark-mode .pause-icon:before,
+.dark-mode .pause-icon:after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 16px;
+    background-color: black !important;
+}
+
+.dark-mode .main-play-button {
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.3s ease;
+}
+
+.dark-mode .progress-container {
+    background-color: rgba(255, 255, 255, 0.2);
 }
