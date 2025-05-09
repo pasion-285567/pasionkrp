@@ -80,11 +80,13 @@ async function openPopup(noteId) {
 
     document.getElementById('popup').style.display = 'block';
     document.getElementById('popup-overlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
 }
 
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
     document.getElementById('popup-overlay').style.display = 'none';
+    document.body.style.overflow = 'auto';
 }
 
 // Make functions available globally

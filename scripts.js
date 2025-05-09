@@ -20,9 +20,33 @@ window.addEventListener("scroll", function () {
 function openFullscreen(imageSrc) {
     document.getElementById("fullscreenImage").src = imageSrc;
     document.getElementById("fullscreenModal").style.display = 'flex';
+    document.body.style.overflow = 'hidden';  // lock scroll
 }
+
 
 // Close Fullscreen
 function closeFullscreen() {
     document.getElementById("fullscreenModal").style.display = 'none';
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slideElements = document.querySelectorAll('.slide-up');
+
+    function checkSlide() {
+        const triggerBottom = window.innerHeight * 0.9;
+
+        slideElements.forEach(el => {
+            const boxTop = el.getBoundingClientRect().top;
+            const boxBottom = el.getBoundingClientRect().bottom;
+
+            if (boxTop < triggerBottom && boxBottom > 0) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkSlide);
+    window.addEventListener('load', checkSlide);
+});

@@ -24,24 +24,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="controls-container">
                         <div class="controls-placeholder">
                             <div class="buttons-container">
-                                <!-- Rewind button -->
-                                <button class="control-button rewind-btn">
-                                    <img src="icons/gobackward-15-svgrepo-com.svg" alt="Go Backward">
-                                </button>
 
                                 <!-- Play/pause button -->
                                 <button class="control-button play-pause-btn">
                                     <div class="play-icon"></div>
                                     <div class="pause-icon"></div>
                                 </button>
-
+                                <!-- Rewind button -->
+                                <button class="control-button rewind-btn">
+                                    <img src="icons/gobackward-15-svgrepo-com.svg" alt="Go Backward">
+                                </button>
                                 <!-- Forward button -->
                                 <button class="control-button forward-btn">
                                     <img src="icons/goforward-15-svgrepo-com.svg" alt="Go Forward">
                                 </button>
-
                                 
-
+                                <!-- Volume icon and control will be added by JavaScript -->
+                                
                                 <!-- Timestamps -->
                                 <div class="timestamp" id="timestampProgress">00:00</div>
                                 <div class="timestamp" id="timeSlash">/</div>
@@ -53,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                         <!-- Fullscreen button -->
                                 <button class="control-button fullscreen-btn">
-                                    <img src="icons/full-screen-svgrepo-com.svg" alt="Fullscreen">
+                                    <img src="icons/fullscreen-svgrepo-com.svg" alt="Fullscreen">
                                 </button>
                     </div>
                 </div>

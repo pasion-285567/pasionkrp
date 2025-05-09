@@ -1,3 +1,5 @@
+/* player.css */
+
 .player-container {
     max-width: 500px;
     position: relative;
@@ -95,6 +97,101 @@ video {
     background-color: #1877F2;
     border-radius: 4px;
     width: 0%;
+    position: relative;
+}
+
+/* Progress handle (circle indicator) */
+.progress-handle {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid #1877F2;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -6px; /* Position at the end of the progress bar */
+    transform: translateY(-50%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease;
+    z-index: 10;
+}
+
+.progress-handle:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Volume control styling */
+.volume-container {
+    width: 60px;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    margin: 0 5px;
+    display: none; /* Hidden by default, shown in fullscreen */
+}
+
+.volume-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    position: relative;
+}
+
+.volume-level {
+    height: 100%;
+    background-color: #1877F2;
+    border-radius: 4px;
+    width: 100%; /* Default to 100% */
+    position: relative;
+}
+
+.volume-handle {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid #1877F2;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease;
+    z-index: 10;
+}
+
+.volume-handle:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+.volume-icon {
+    display: none; /* Hidden by default, shown in fullscreen */
+    margin-right: 5px;
+    margin-left: 10px;
+    margin-top:auto; 
+}
+
+.volume-icon img {
+    width: 16px;
+    height: 16px;
+    filter: invert(0);
+    cursor: pointer;
+}
+
+.player-container.in-fullscreen .progress-handle {
+    width: 16px;
+    height: 16px;
+    right: -8px;
+}
+
+.player-container.in-fullscreen .volume-handle {
+    width: 16px;
+    height: 16px;
+    right: -8px;
 }
 
 .buttons-container {
@@ -133,10 +230,12 @@ video {
 }
 
 .timestamp {
-    margin-left: 10px;
+    margin-left: 11px;
     color: black;
     font-size: 14px;
-
+        margin-bottom:auto;
+        margin-top:auto; 
+font-family:Arial;
 }
 
 /* Play button icon */
@@ -184,7 +283,7 @@ video {
     }
 
     .buttons-container {
-        width: 150px;
+        width: 150px !important;
     }
 
     .player-container {
@@ -201,6 +300,23 @@ video {
         max-height: 15px;
         max-width: 90%;
     }
+    
+    .progress-handle {
+        width: 10px;
+        height: 10px;
+        right: -5px;
+    }
+    
+    .volume-handle {
+        width: 10px;
+        height: 10px;
+        right: -5px;
+    }
+
+        .volume-container, .volume-bar, .volume-icon, .volume-handle {
+    display: none !important;
+}
+    
 }
 
 .media-container {
@@ -214,7 +330,6 @@ video {
 }
 
 .player-container {
-
     flex: 0 0 auto;
     position: relative;
 }
@@ -225,45 +340,79 @@ video {
     display: block;
 }
 
-
-/* Fullscreen adjustments */
-html:-webkit-full-screen .video-container,
-html:-moz-full-screen .video-container,
-html:-ms-fullscreen .video-container {
-    z-index: 10;
-    /* Keeps video below custom controls */
+/* UPDATED FULLSCREEN STYLES */
+/* Player container in fullscreen mode */
+.player-container.in-fullscreen {
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-html:-webkit-full-screen .controls-container,
-html:-moz-full-screen .controls-container,
-html:-ms-fullscreen .controls-container {
-    z-index: 100;
-    /* Ensures custom controls stay on top */
+.player-container.in-fullscreen .video-container {
+    flex-grow: 1;
+    height: 100%;
 }
 
-/* Make video fill the screen */
-html:-webkit-full-screen video,
-html:-moz-full-screen video,
-html:-ms-fullscreen video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-    /* Ensures correct aspect ratio */
+.player-container.in-fullscreen video {
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Ensure controls remain visible in fullscreen */
+.player-container.in-fullscreen .controls-container {
+    position: fixed;
+    bottom: 30px;
+    z-index: 10000;
+    max-width: 90%;
+}
+
+/* Adjust button container in fullscreen for volume slider */
+.player-container.in-fullscreen .buttons-container {
+    width: 320px; /* Increased width to accommodate volume slider */
 }
 
 /* Hide default fullscreen controls */
-html:-webkit-full-screen {
-    overflow: hidden;
+:fullscreen {
+    background-color: black;
 }
 
-html:-moz-full-screen {
-    overflow: hidden;
+:fullscreen .player-container {
+    max-width: none;
+    width: 100%;
+    height: 100%;
 }
 
-html:-ms-fullscreen {
-    overflow: hidden;
+:-webkit-full-screen {
+    background-color: black;
 }
 
+:-moz-full-screen {
+    background-color: black;
+}
+
+:-ms-fullscreen {
+    background-color: black;
+}
+
+/* Ensure controls stay on top in all browsers */
+:fullscreen .controls-container {
+    z-index: 10000;
+}
+
+:-webkit-full-screen .controls-container {
+    z-index: 10000;
+}
+
+:-moz-full-screen .controls-container {
+    z-index: 10000;
+}
+
+:-ms-fullscreen .controls-container {
+    z-index: 10000;
+}
 
 .dark-mode .media-container {
     scrollbar-color: #777 #333;
@@ -280,7 +429,9 @@ html:-ms-fullscreen {
     color: white;
 }
 
-.dark-mode .rewind-btn img, .dark-mode .forward-btn img {
+.dark-mode .rewind-btn img, 
+.dark-mode .forward-btn img,
+.dark-mode .volume-icon img {
     filter: invert(1);
 }
 
@@ -306,6 +457,14 @@ border-color: transparent transparent transparent white !important;
     transition: opacity 0.3s ease;
 }
 
-.dark-mode .progress-container {
+.dark-mode .progress-container,
+.dark-mode .volume-container {
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode for progress and volume handles */
+.dark-mode .progress-handle,
+.dark-mode .volume-handle {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    border: 2px solid #1877F2;
 }

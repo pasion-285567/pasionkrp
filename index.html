@@ -15,11 +15,12 @@
     <link rel="stylesheet" href="styles-660p.css">
     <link rel="stylesheet" href="styles-480p.css">
     <link rel="stylesheet" href="player.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="Profiles/favicon.png">
 </head>
 
 <div class="navbar" id="navbar">
-    <span class="logo" id="navbarLogo">Kurt Raymund Pasion</span>
+    <span class="logo slide-up" id="navbarLogo">Kurt Raymund Pasion</span>
     <div class="nav-links" id="navLinks">
         <button class="nav-button" onclick="scrollToSection('home')">
             <img src="icons/home.png" alt="Notes" class="mobile-image">
@@ -51,7 +52,8 @@
     <div class="hero" id="hero">
         <div class="hero-text" id="heroText">Hi! I'm Kurt Raymund Pasion</div>
     </div>
-
+</div>
+<div class="section slide-up" id="about">
     <div class="about-info section" id="about">
         <div class="profile-container">
             <img src="Profiles/profile1.jpg" alt="Profile Picture">
@@ -78,7 +80,7 @@
         </div>
     </div>
 </div>
-<div class="section" id="albums">
+<div class="section slide-up" id="albums">
     <h1 class style="padding: 20px">Personal Album</h1>
     <div class="album-container">
 
@@ -103,13 +105,13 @@
     </div>
 </div>
 
-<h1 class style="padding: 20px">Albums</h1>
-<div class="albums-stack">
+<h1 class="photoAlbum slide-up" style="padding: 20px">Albums</h1>
+<div class="albums-stack slide-up">
     <!-- Albums will be loaded here via JavaScript -->
 </div>
 
 <!-- Album Modal -->
-<div id="albumModal" class="album-modal">
+<div id="albumModal" class="album-modal" style="display: none;">
     <div class="album-modal-content">
         <span class="album-close-button" onclick="closeAlbumModal()">&times;</span>
         <h2 id="albumModalTitle">Album Title</h2>
@@ -119,27 +121,39 @@
     </div>
 </div>
 
-<div class="section" id="live">
+
+<div class="section slide-up" id="live">
     <h1 style="padding: 20px;">Media</h1>
     <div class="media-container" style="padding: 20px;">
         <!-- Media will be loaded here via JavaScript -->
     </div>
 </div>
 
-<h1 style="padding: 20px">Notes</h1>
-<div class="section" id="notes">
-    <!-- Notes will be loaded here via JavaScript -->
+<div class="notes-container slide-up" id="notes-container">
+    <h1 class="notes" style="padding: 20px">Notes</h1>
+    <div class="section" id="notes">
+        <!-- Notes will be loaded here via JavaScript -->
+    </div>
 </div>
-<div class="popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
-<div id="popup-container"></div>
 
-<!-- Overall scripts -->
+<div class="popup-overlay" id="popup-overlay" onclick="closePopup()">
+
+</div>
+<div id="popup-container">
+
+</div>
+
+
 <script src="scripts.js"></script>
 <script src="media.js"></script>
 <script type="module" src="notes.js"></script>
 <script src="dark-mode.js"></script>
-<script type="module" src="albums-stack.js"></script>
 <script src="player.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<script type="module" src="albums-stack.js"></script> <!-- This should be last -->
+
 
 <!-- Fullscreen Modal -->
 <div class="fullscreen-modal" id="fullscreenModal" onclick="closeFullscreen()">
