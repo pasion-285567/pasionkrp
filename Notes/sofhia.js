@@ -1,5 +1,6 @@
 export const sofhiaContent = {
     title: "\"Sofhia\"",
+    date: "September 6, 2024",
     preview: "Soft whispers linger in the night",
     content: `
 Soft whispers linger in the night,

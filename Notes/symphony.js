@@ -1,5 +1,6 @@
 export const symphonyContent = {
     title: "\"Sofhia Rose\"",
+    date: "September 6, 2024",
     preview: "Serenades of love, I sing for you",
     content: `
 Serenades of love, I sing for you,

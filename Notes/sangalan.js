@@ -1,5 +1,6 @@
 export const sangalanContent = {
     title: "Sa Ngalan ng Pag-ibig",
+    date: "October 11, 2024",
     preview: "Maghihintay ako",
     content: `
 Maghihintay ako

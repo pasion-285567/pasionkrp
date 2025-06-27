@@ -1,5 +1,6 @@
 export const illwaitContent = {
     title: "I'll Wait for You",
+    date: "September 5, 2024",
     preview: "In the quiet of dawn, where the",
     content: `
 In the quiet of dawn, where the soft light breaks

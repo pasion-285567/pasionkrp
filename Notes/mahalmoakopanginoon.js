@@ -1,5 +1,6 @@
 export const mahalmoakopanginoonContent = {
     title: "Mahal Mo Ako Panginoon",
+    date: "July 13, 2024",
     preview: "Mahal na mahal Mo ako Panginoon",
     content: `
 Mahal na mahal Mo ako Panginoon

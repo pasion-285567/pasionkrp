@@ -14,13 +14,13 @@ import { sasusunodContent } from './Notes/sasusunod.js';
 export const notesData = {
     'mahalmoakopanginoon': mahalmoakopanginoonContent,
     'mahalkitapanginoon': mahalkitapanginoonContent,
- //   'symphony': symphonyContent,
- //   'sofhia': sofhiaContent,
- //   'panalangin': panalanginContent,
- //   'parasataong': parasataongContent,
-  //  'hinditayopwede': hinditayopwedeContent,
- //   'imalwayshere': imalwayshereContent,
- //   'sangalan': sangalanContent,
- //   'illwait': illwaitContent,
-  //  'sasusunod': sasusunodContent
+    'symphony': symphonyContent,
+    'sofhia': sofhiaContent,
+    'panalangin': panalanginContent,
+    'parasataong': parasataongContent,
+    'hinditayopwede': hinditayopwedeContent,
+    'imalwayshere': imalwayshereContent,
+    'sangalan': sangalanContent,
+    'illwait': illwaitContent,
+    'sasusunod': sasusunodContent
 };

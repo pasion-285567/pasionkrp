@@ -6,160 +6,252 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bro. Raymund's Page</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="dark-mode_styles.css">
-    <link rel="stylesheet" href="dark-mode-switch.css">
-    <link rel="stylesheet" href="album-stack.css">
-    <link rel="stylesheet" href="styles-1024p.css">
-    <link rel="stylesheet" href="styles-1078p.css">
-    <link rel="stylesheet" href="styles-716p.css">
-    <link rel="stylesheet" href="styles-660p.css">
-    <link rel="stylesheet" href="styles-480p.css">
     <link rel="stylesheet" href="player.css">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="Profiles/favicon.png">
 </head>
 
-<div class="navbar" id="navbar">
-    <span class="logo slide-up" id="navbarLogo">Kurt Raymund Pasion</span>
-    <div class="nav-links" id="navLinks">
-        <button class="nav-button" onclick="scrollToSection('home')">
-            <img src="icons/home.png" alt="Notes" class="mobile-image">
-            <span>Home</span>
-        </button>
-        <button class="nav-button" onclick="scrollToSection('about')">
-            <img src="icons/about.png" alt="About" class="mobile-image">
-            <span>About</span>
-        </button>
-        <button class="nav-button" onclick="scrollToSection('albums')">
-            <img src="icons/albums.webp" alt="Albums" class="mobile-image">
-            <span>Albums</span>
-        </button>
-        <button class="nav-button" onclick="scrollToSection('live')">
-            <img src="icons/live.png" alt="Live" class="mobile-image">
-            <span>Live</span>
-        </button>
-        <button class="nav-button" onclick="scrollToSection('notes')">
-            <img src="icons/notes.png" alt="Notes" class="mobile-image">
-            <span>Notes</span>
-        </button>
-        <label class="switch">
-            <input type="checkbox" id="darkModeToggle">
-            <span class="slider"></span>
-        </label>
-    </div>
-</div>
-<div class="section" id="home">
-    <div class="hero" id="hero">
-        <div class="hero-text" id="heroText">Hi! I'm Kurt Raymund Pasion</div>
-    </div>
-</div>
-<div class="section slide-up" id="about">
-    <div class="about-info section" id="about">
-        <div class="profile-container">
-            <img src="Profiles/profile1.jpg" alt="Profile Picture">
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Kurt Raymund Pasion</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#album">Photos</a></li>
+                <li><a href="#albums">Albums</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#notes">Notes</a></li>
+            </ul>
         </div>
-        <div class="about-text">
-            <h1 class="about-name">Pasion, Kurt Raymund P.</h1>
-            <p class="about-details">Pianist - a person who plays the piano, especially professionally.<br>Papunta pa
-                lang ako, nagkaklase na kayo.</p>
-            <p><strong>Lives in: </strong>Catmon, Santa Maria, Bulacan<br>
-                <strong>Birthday: </strong>March 28, 2004<br>
-                <strong>Studies at: </strong>STI College Sta. Maria
-            </p>
+    </nav>
 
-            <h3>Social Media Accounts:</h3>
-            <p><strong>Facebook: </strong><a class="socmed" href="https://www.facebook.com/bro.emond"
-                    target="_blank">@bro.emond</a><br>
-                <strong>Instagram: </strong><a class="socmed" href="https://www.instagram.com/bro._raymund"
-                    target="_blank">@bro._raymund</a><br>
-                <strong>TikTok: </strong><a class="socmed" href="https://www.tiktok.com/bro._raymund"
-                    target="_blank">@bro._raymund</a><br>
-                <strong>Threads: </strong><a class="socmed" href="https://www.threads.net/bro._raymund"
-                    target="_blank">@bro._raymund</a>
-            </p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+
+        <div class="hero-content">
+            <h1>Hello, I'm Kurt Raymund!</h1>
+            <p>Welcome to my creative space where I share my journey, memories, and thoughts</p>
+            <a href="#about" class="cta-button">Discover My Story</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section fade-in" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+            </div>
+            <div class="about-text">
+                <h3>The Melodic Synthesist</h3>
+                <p>I’m <strong>Kurt Raymund Pasion</strong> — a developer by
+                    discipline, a musician at heart.
+                    I live between logic and lyric,
+                    shifting from code to chord,
+                    from syntax to song.
+                    To me, code is more than commands,
+                    and music is more than sound —
+                    both are ways I make sense of the world
+                    around me. I build systems like I build
+                    melodies: with structure, with soul,
+                    and with something honest underneath.
+                    As a melodic synthesist, I find rhythm
+                    in reason, and beauty in the balance
+                    between machine and meaning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Album Section -->
+    <section class="section fade-in" id="album">
+        <h2 class="section-title">Personal Album</h2>
+        <div class="album-grid">
+            <div class="photo-card">
+                <div class="photo-cover">
+                    <img src="Profiles/image1.jpg" alt="Cover Photo" class="card-image">
+                </div>
+                <div class="photo-overlay">
+                    <h4>Wedding Reception</h4>
+                    <p>Witness to a beautiful beginning</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <div class="photo-cover">
+                    <img src="Profiles/image2.jpg" alt="Beach Day" class="card-image">
+                </div>
+                <div class="photo-overlay">
+                    <h4>STI College Student</h4>
+                    <p>A student of code and character</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <div class="photo-cover">
+                    <img src="Profiles/image3.jpg" alt="Beach Day" class="card-image">
+                </div>
+                <div class="photo-overlay">
+                    <h4>CGCJ Thanksgiving Temple</h4>
+                    <p>In His temple, we gave thanks</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <div class="photo-cover">
+                    <img src="Profiles/image4.jpg" alt="Beach Day" class="card-image">
+                </div>
+                <div class="photo-overlay">
+                    <h4>20th Birthday + KKK Thanksgiving 2024</h4>
+                    <p>Two decades behind me, His mercy beside me.</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <div class="photo-cover">
+                    <img src="Profiles/image5.jpg" alt="Beach Day" class="card-image">
+                </div>
+                <div class="photo-overlay">
+                    <h4>Photographer</h4>
+                    <p>Moments fade — unless I catch them.</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <div class="photo-cover">
+                    <img src="Profiles/image6.jpg" alt="Beach Day" class="card-image">
+                </div>
+                <div class="photo-overlay">
+                    <h4>CGCJ 87th Thanksgiving 2023</h4>
+                    <p>We looked back and found nothing but grace.</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <div class="photo-cover">
+                    <img src="Profiles/image7.jpg" alt="Beach Day" class="card-image">
+                </div>
+                <div class="photo-overlay">
+                    <h4>CGCJ 86th Thanksgiving 2022</h4>
+                    <p>Before the year closes, we give Him praise.</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <div class="photo-cover">
+                    <img src="Profiles/image8.jpg" alt="Beach Day" class="card-image">
+                </div>
+                <div class="photo-overlay">
+                    <h4>CGCJ 86th Thanksgiving 2022</h4>
+                    <p>The year ends, the thanksgiving begins.</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <div class="photo-cover">
+                    <img src="Profiles/image9.jpg" alt="Beach Day" class="card-image">
+                </div>
+                <div class="photo-overlay">
+                    <h4>Locale of Partida – Music Recital 2025</h4>
+                    <p>Songs shaped in practice, poured in praise.</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <div class="photo-cover">
+                    <img src="Profiles/image10.jpg" alt="Beach Day" class="card-image">
+                </div>
+                <div class="photo-overlay">
+                    <h4>Locale of Sapang Palay – Wedding</h4>
+                    <p>Grateful to witness love wrapped in grace.</p>
+                </div>
+            </div>
+    </section>
+
+    <!-- Albums Section -->
+    <section class="section fade-in" id="albums">
+        <h2 class="section-title">Photo Albums</h2>
+        <div class="albums-grid">
+            <div class="album-card">
+                <div class="album-cover">
+                </div>
+                <div class="album-info">
+                    <h3>Best Friends</h3>
+                    <p>7 photos • Princess & Sofhia</p>
+                </div>
+            </div>
+            <div class="album-card">
+                <div class="album-cover"></div>
+                <div class="album-info">
+                    <h3>Lokal ng Sta. Maria</h3>
+                    <p>10 photos • Ongoing</p>
+                </div>
+            </div>
+            <div class="album-card">
+                <div class="album-cover"></div>
+                <div class="album-info">
+                    <h3>Lokal ng Catmon</h3>
+                    <p>9 photos • Collection</p>
+                </div>
+            </div>
+            <div class="album-card">
+                <div class="album-cover"></div>
+                <div class="album-info">
+                    <h3>t-squad</h3>
+                    <p>10 photos • Brianna & Paula</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="section fade-in" id="videos">
+        <h2 class="section-title">Video Memories</h2>
+        <div class="videos-grid"></div>
+    </section>
+
+    <!-- Notes Section -->
+    <section class="section fade-in" id="notes">
+        <h2 class="section-title">My Notes</h2>
+        <div class="notes-container"></div>
+    </section>
+
+    <!-- Modals -->
+    <div id="noteModal" class="modal">
+        <button class="modal-close">&times;</button>
+        <div class="modal-content note-modal">
+            <h2 id="noteTitle"></h2>
+            <div class="note-date" id="noteDate"></div>
+            <div class="note-content" id="noteContent"></div>
         </div>
     </div>
-</div>
-<div class="section slide-up" id="albums">
 
-    <div class="album-container">
-
-        <img src="Profiles/image1.jpg" alt="Album 1" class="album-image"
-            onclick="openFullscreen('Profiles/image1.jpg')">
-        <img src="Profiles/image2.jpg" alt="Album 2" class="album-image"
-            onclick="openFullscreen('Profiles/image2.jpg')">
-        <img src="Profiles/image3.jpg" alt="Album 3" class="album-image"
-            onclick="openFullscreen('Profiles/image3.jpg')">
-        <img src="Profiles/image4.jpg" alt="Album 4" class="album-image"
-            onclick="openFullscreen('Profiles/image4.jpg')">
-        <img src="Profiles/image5.jpg" alt="Album 5" class="album-image"
-            onclick="openFullscreen('Profiles/image5.jpg')">
-        <img src="Profiles/image6.jpg" alt="Album 6" class="album-image"
-            onclick="openFullscreen('Profiles/image6.jpg')">
-        <img src="Profiles/image7.jpg" alt="Album 7" class="album-image"
-            onclick="openFullscreen('Profiles/image7.jpg')">
-        <img src="Profiles/image8.jpg" alt="Album 8" class="album-image"
-            onclick="openFullscreen('Profiles/image8.jpg')">
-        <img src="Profiles/image9.jpg" alt="Album 9" class="album-image"
-            onclick="openFullscreen('Profiles/image9.jpg')">
-        <img src="Profiles/image10.jpg" alt="Album 10" class="album-image"
-            onclick="openFullscreen('Profiles/image10.jpg')">
-    </div>
-</div>
-
-<h1 class="photoAlbum slide-up"></h1>
-<div class="albums-stack slide-up">
-    <!-- Albums will be loaded here via JavaScript -->
-</div>
-
-<!-- Album Modal -->
-<div id="albumModal" class="album-modal" style="display: none;">
-    <div class="album-modal-content">
-        <span class="album-close-button" onclick="closeAlbumModal()">&times;</span>
-        <h2 id="albumModalTitle">Album Title</h2>
-        <div class="album-images-container">
-            <!-- Images will be added here via JavaScript -->
+    <div id="albumModal" class="modal">
+        <button class="modal-close">&times;</button>
+        <div class="modal-content album-modal">
+            <h2 id="albumTitle"></h2>
+            <div class="album-photos" id="albumPhotos"></div>
         </div>
     </div>
-</div>
 
-
-<div class="section slide-up" id="live" style="padding: 20px;">
-    <div class="media-container">
-        <!-- Media will be loaded here via JavaScript -->
+    <div id="mediaModal" class="modal">
+        <button class="modal-close">&times;</button>
+        <div class="modal-content fullscreen">
+            <div id="mediaContent"></div>
+        </div>
     </div>
-</div>
 
-<div class="notes-container slide-up" id="notes-container">
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.facebook.com/bro.emond">Facebook</a>
+                <a href="https://www.instagram.com/bro._raymund/">Instagram</a>
+                <a href="https://www.threads.com/@bro._raymund">Threads</a>
+                <a href="https://www.tiktok.com/@bro._raymund">TikTok</a>
+            </div>
+            <p>&copy; Updated June 27, 2025 by Kurt Raymund Pasion. All Rights Reserved</p>
+        </div>
+    </footer>
 
-    <div class="section" id="notes">
-        <!-- Notes will be loaded here via JavaScript -->
-    </div>
-</div>
-
-<div class="popup-overlay" id="popup-overlay" onclick="closePopup()">
-
-</div>
-<div id="popup-container">
-
-</div>
-
-
-<script src="scripts.js"></script>
-<script src="media.js"></script>
-<script type="module" src="notes.js"></script>
-<script src="dark-mode.js"></script>
-<script src="player.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
-
-<script type="module" src="albums-stack.js"></script> <!-- This should be last -->
-
-
-<!-- Fullscreen Modal -->
-<div class="fullscreen-modal" id="fullscreenModal" onclick="closeFullscreen()">
-    <img id="fullscreenImage" src="" alt="Fullscreen Image">
-</div>
+    <script type="module" src="notes.js"></script>
+    <script type="module" src="albums.js"></script>
+    <script type="module" src="videos.js"></script>
+    <script src="player.js"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>

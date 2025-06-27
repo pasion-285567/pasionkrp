@@ -1,5 +1,6 @@
 export const hinditayopwedeContent = {
     title: "Hindi Tayo Pwede",
+    date: "September 11, 2024",
     preview: "Sa bawat sandali ng ating pag-ibig",
     content: `
 Sa bawat sandali ng ating pag-ibig

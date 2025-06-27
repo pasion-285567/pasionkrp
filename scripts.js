@@ -1,52 +1,71 @@
-// For index stuffs
-
-function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+// Modal functions
+function openModal(modalId) {
+    document.getElementById(modalId).classList.add('show');
+    document.body.style.overflow = 'hidden';
 }
 
-window.addEventListener("scroll", function () {
-    let navbar = document.getElementById("navbar");
-    let heroText = document.getElementById("heroText");
-    let navbarLogo = document.getElementById("navbarLogo");
-
-    let scrollPosition = window.scrollY;
-    heroText.style.opacity = 1 - scrollPosition / window.innerHeight;
-    navbarLogo.style.opacity = scrollPosition / window.innerHeight;
-
-    navbar.classList.toggle("scrolled", scrollPosition > window.innerHeight);
-});
-
-// Open Fullscreen
-function openFullscreen(imageSrc) {
-    document.getElementById("fullscreenImage").src = imageSrc;
-    document.getElementById("fullscreenModal").style.display = 'flex';
-    document.body.style.overflow = 'hidden';  // lock scroll
+function closeModal(modalId) {
+    document.getElementById(modalId).classList.remove('show');
+    document.body.style.overflow = 'auto';
 }
 
-
-// Close Fullscreen
-function closeFullscreen() {
-    document.getElementById("fullscreenModal").style.display = 'none';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const slideElements = document.querySelectorAll('.slide-up');
-
-    function checkSlide() {
-        const triggerBottom = window.innerHeight * 0.9;
-
-        slideElements.forEach(el => {
-            const boxTop = el.getBoundingClientRect().top;
-            const boxBottom = el.getBoundingClientRect().bottom;
-
-            if (boxTop < triggerBottom && boxBottom > 0) {
-                el.classList.add('active');
-            } else {
-                el.classList.remove('active');
-            }
-        });
+// Navbar scroll effect
+window.addEventListener('scroll', function () {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
     }
-
-    window.addEventListener('scroll', checkSlide);
-    window.addEventListener('load', checkSlide);
 });
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Intersection Observer for fade-in animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Observe all fade-in elements
+document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+});
+
+// Close modals when clicking close button or outside
+document.querySelectorAll('.modal-close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', function () {
+        this.closest('.modal').classList.remove('show');
+        document.body.style.overflow = 'auto';
+    });
+});
+
+document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', function (e) {
+        if (e.target === this) {
+            this.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+

@@ -14,26 +14,69 @@
     background-color: #000;
 }
 
+.video-container {
+    position: relative;
+    background: none;
+}
+
+.video-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    border-radius: 12px;
+    pointer-events: none;
+}
+
 video {
     width: 100%;
     display: block;
+
+    filter: brightness(1);
+    transition: filter 0.3s;
 }
 
+/* Default: semi-transparent video */
+.video-container video {
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    border-radius: 12px;
+    background: transparent !important;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+/* On hover sa buong video-card: gawing opaque ang video */
+.video-card:hover .video-container video {
+    opacity: 1;
+}
+
+.player-container:hover video,
+.player-container:focus-within video {
+    filter: brightness(1);
+}
+
+/* Main play button - pink gradient, centered */
 .main-play-button {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 10;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
+    pointer-events: auto;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    border: none;
+    outline: none;
     cursor: pointer;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
-    transition: opacity 0.3s ease;
+    justify-content: center;
+    transition: background 0.2s;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
 
 .main-play-button.hidden {
@@ -82,6 +125,19 @@ video {
     border-radius: 10px;
 }
 
+/* Controls only appear pag hover sa player-container */
+.controls-container {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.player-container:hover .controls-container,
+.player-container:focus-within .controls-container {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .progress-container {
     width: 80%;
     height: 8px;
@@ -110,7 +166,8 @@ video {
     border-radius: 50%;
     position: absolute;
     top: 50%;
-    right: -6px; /* Position at the end of the progress bar */
+    right: -6px;
+    /* Position at the end of the progress bar */
     transform: translateY(-50%);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.1s ease;
@@ -130,7 +187,8 @@ video {
     position: relative;
     cursor: pointer;
     margin: 0 5px;
-    display: none; /* Hidden by default, shown in fullscreen */
+    display: none;
+    /* Hidden by default, shown in fullscreen */
 }
 
 .volume-bar {
@@ -144,7 +202,8 @@ video {
     height: 100%;
     background-color: #1877F2;
     border-radius: 4px;
-    width: 100%; /* Default to 100% */
+    width: 100%;
+    /* Default to 100% */
     position: relative;
 }
 
@@ -169,13 +228,15 @@ video {
 }
 
 .volume-icon {
-    display: none; /* Hidden by default, shown in fullscreen */
+    display: none;
+    /* Hidden by default, shown in fullscreen */
     margin-right: 5px;
     margin-left: 10px;
-    margin-top:auto; 
+    margin-top: auto;
 }
 
 .volume-icon img {
+    margin-top: 9px;
     width: 16px;
     height: 16px;
     filter: invert(0);
@@ -218,8 +279,8 @@ video {
 
 .rewind-btn img,
 .forward-btn img {
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     filter: invert(0);
 }
 
@@ -233,9 +294,9 @@ video {
     margin-left: 11px;
     color: black;
     font-size: 14px;
-        margin-bottom:auto;
-        margin-top:auto; 
-font-family:Arial;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-family: Arial;
 }
 
 /* Play button icon */
@@ -300,23 +361,26 @@ font-family:Arial;
         max-height: 15px;
         max-width: 90%;
     }
-    
+
     .progress-handle {
         width: 10px;
         height: 10px;
         right: -5px;
     }
-    
+
     .volume-handle {
         width: 10px;
         height: 10px;
         right: -5px;
     }
 
-        .volume-container, .volume-bar, .volume-icon, .volume-handle {
-    display: none !important;
-}
-    
+    .volume-container,
+    .volume-bar,
+    .volume-icon,
+    .volume-handle {
+        display: none !important;
+    }
+
 }
 
 .media-container {
@@ -338,6 +402,11 @@ font-family:Arial;
     width: 100%;
     height: auto;
     display: block;
+}
+
+.video-card:hover .video-container video,
+.video-container video.playing {
+    opacity: 1;
 }
 
 /* UPDATED FULLSCREEN STYLES */
@@ -371,7 +440,8 @@ font-family:Arial;
 
 /* Adjust button container in fullscreen for volume slider */
 .player-container.in-fullscreen .buttons-container {
-    width: 320px; /* Increased width to accommodate volume slider */
+    width: 320px;
+    /* Increased width to accommodate volume slider */
 }
 
 /* Hide default fullscreen controls */
@@ -429,7 +499,7 @@ font-family:Arial;
     color: white;
 }
 
-.dark-mode .rewind-btn img, 
+.dark-mode .rewind-btn img,
 .dark-mode .forward-btn img,
 .dark-mode .volume-icon img {
     filter: invert(1);
@@ -440,7 +510,7 @@ font-family:Arial;
 }
 
 .dark-mode .play-icon {
-border-color: transparent transparent transparent white !important;
+    border-color: transparent transparent transparent white !important;
 }
 
 .dark-mode .pause-icon:before,

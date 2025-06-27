@@ -1,5 +1,6 @@
 export const parasataongContent = {
     title: "Para sa Taong Minamahal Ko",
+    date: "September 14, 2024",
     preview: "Para sa taong minamahal ko",
     content: `
 Para sa taong minamahal ko

@@ -1,5 +1,6 @@
 export const sasusunodContent = {
     title: "Sa Susunod na Habambuhay",
+    date: "October 1, 2024",
     preview: "~inspired from Ben&Ben",
     content: `
 Sa bawat haplos ng hanging nagdaaan,

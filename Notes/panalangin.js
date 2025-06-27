@@ -1,5 +1,6 @@
 export const panalanginContent = {
     title: "Panalangin",
+    date: "October 5, 2024",
     preview: "Ikaw ang laman ng bawat panalangin",
     content: `
 Ikaw ang laman ng bawat panalangin
