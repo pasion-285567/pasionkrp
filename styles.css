@@ -90,6 +90,14 @@
             color: white;
             position: relative;
             overflow: hidden;
+            opacity: 1;
+            transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1);
+            pointer-events: auto;
+        }
+
+        .hero.hero-fade-out {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .hero::before {
@@ -819,3 +827,25 @@
         .album-card:hover .album-thumb-img {
             opacity: 1;
         }
+
+        #main-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+#main-content.show {
+    display: block;
+    opacity: 1;
+}
+
+#navbar {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+#navbar.show {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -69,3 +69,26 @@ document.querySelectorAll('.modal').forEach(modal => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const hero = document.querySelector('.hero');
+    const mainContent = document.getElementById('main-content');
+    const navbar = document.getElementById('navbar');
+    const discoverBtn = document.getElementById('discoverBtn');
+
+    if (discoverBtn) {
+        discoverBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            hero.classList.add('hero-fade-out');
+            setTimeout(() => {
+                hero.style.display = 'none';
+                mainContent.classList.add('show');
+                // Wait a bit for main-content to fade in, then show navbar
+                setTimeout(() => {
+                    navbar.classList.add('show');
+                }, 100); // slight delay for smoothness
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 700); // match the transition duration
+        });
+    }
+});
+
